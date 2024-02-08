@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+}
+
+
+.links {
+    font-family: "Oxygen", sans-serif;
+    font-size: 12px;
+}
+
+.logo {
+    font-family: "Lora", serif;
+    font-size: 26px;
+}
+
+.title {
+    font-family: "Lora", serif;
+    font-size: 50px;
+}
+
+.subtitle {
+    font-family: "Oxygen", sans-serif;
+    font-size: 17px;
+    color: #2E2E2E;
+    opacity: 63%;
+}
+
+.footer {
+    height: 89px;
+    width: 100%;
+    background-image: url("./footer.jpg");
+    display: flex;
+}
+
+.mainText {
+    font-size: 24px;
+    font-family: "Oxygen", sans-serif;
+}
