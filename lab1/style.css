@@ -1,30 +1,48 @@
 body {
     margin: 0;
+    padding: 0;
 }
 
 .header {
     height: 74px;
+    padding-top: 17px;
+    box-sizing: border-box;
 }
 
 .head {
     display: flex;
-    margin-top: 17px;
-    margin-left: 240px;
-    margin-right: 240px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.header-link {
+    padding: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: "Oxygen", sans-serif;
+    color: rgba(46, 46, 46, 1);
+    text-decoration: none;
 }
 
 .header-links {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.footer-link {
+    padding: 10px;
+    cursor: pointer;
     font-family: "Oxygen", sans-serif;
     font-size: 12px;
-    margin-top: 10px;
-    color: rgba(46, 46, 46, 1);
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
 }
 
 .footer-links {
-    font-family: "Oxygen", sans-serif;
-    font-size: 12px;
     margin-top: 10px;
-    color: rgba(255, 255, 255, 0.6);
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .header-logo {
@@ -58,8 +76,8 @@ body {
     font-size: 24px;
     font-family: "Oxygen", sans-serif;
     width: 960px;
-    margin-left: 240px;
-    margin-right: 240px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 135px;
 }
 
@@ -67,14 +85,14 @@ body {
     height: 89px;
     background-image: url("./footer.jpg");
     background-size: 100%;
-    display: flex;
+    padding-top: 28px;
+    box-sizing: border-box;
 }
 
 .foot {
     display: flex;
-    margin-top: 28px;
-    margin-left: 240px;
-    margin-right: 240px;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 
 .footer-logo path {
