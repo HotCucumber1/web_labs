@@ -8,20 +8,35 @@ body {
 
 .header {
     height: 74px;
-    padding-top: 17px;
     box-sizing: border-box;
     margin-bottom: 82px;
+    padding-top: 17px;
 }
 
 .head {
-    display: flex;
-    width: 940px;
+    height: 40px;
+    margin-left: 250px;
+    margin-right: 250px;
+    overflow: clip;
+}
+
+.header-logo {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.header-links {
+    display: inline-block;
+    vertical-align: middle;
     margin-left: auto;
-    margin-right: auto;
+    height: 40px;
+    padding-top: 10px;
+    float: right;
 }
 
 .header-link {
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     cursor: pointer;
     font-size: 12px;
     font-family: "Oxygen", sans-serif;
@@ -29,14 +44,9 @@ body {
     text-decoration: none;
 }
 
-.header-links {
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: 0;
-}
-
 .footer-link {
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     cursor: pointer;
     font-family: "Oxygen", sans-serif;
     font-size: 12px;
@@ -45,13 +55,10 @@ body {
 }
 
 .footer-links {
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: 0;
-}
-
-.header-logo {
-    margin-top: 3px;
+    float: right;
+    vertical-align: middle;
+    display: inline-block;
+    padding-top: 10px;
 }
 
 .title {
@@ -81,26 +88,26 @@ body {
 .mainText {
     font-size: 24px;
     font-family: "Oxygen", sans-serif;
-    max-width: 960px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 240px;
+    margin-right: 240px;
     margin-bottom: 135px;
 }
 
 .footer {
     height: 89px;
     background-image: url("./footer.jpg");
-    background-size: 100%;
+    background-color: rgba(35, 47, 56, 0.6);
+    background-blend-mode: darken;
+    background-size: cover;
     padding-top: 28px;
     box-sizing: border-box;
 }
 
 .foot {
-    display: flex;
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 240px;
+    margin-right: 240px;
+    height: 34px;
+    overflow: hidden;
 }
 
 .footer-logo path {
@@ -108,5 +115,6 @@ body {
 }
 
 .footer-logo {
+    display: inline-block;
     margin-top: 3px;
 }
