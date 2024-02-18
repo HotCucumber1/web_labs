@@ -15,8 +15,7 @@ body {
 
 .head {
     height: 40px;
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-inline: 250px;
     overflow: clip;
 }
 
@@ -35,8 +34,7 @@ body {
 }
 
 .header-link {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-inline: 20px;
     cursor: pointer;
     font-size: 12px;
     font-family: "Oxygen", sans-serif;
@@ -45,8 +43,7 @@ body {
 }
 
 .footer-link {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-inline: 10px;
     cursor: pointer;
     font-family: "Oxygen", sans-serif;
     font-size: 12px;
@@ -82,14 +79,13 @@ body {
 
 .image {
     width: 100%;
-    margin-bottom: 120px;
+    margin-bottom: 140px;
 }
 
 .mainText {
     font-size: 24px;
     font-family: "Oxygen", sans-serif;
-    margin-left: 240px;
-    margin-right: 240px;
+    margin-inline: 240px;
     margin-bottom: 135px;
 }
 
@@ -104,8 +100,7 @@ body {
 }
 
 .foot {
-    margin-left: 240px;
-    margin-right: 240px;
+    margin-inline: 240px;
     height: 34px;
     overflow: hidden;
 }
