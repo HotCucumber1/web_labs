@@ -90,7 +90,7 @@ body {
 
 .section-footer {
     height: 89px;
-    background-image: url("./footer.jpg");
+    background-image: url("../footer.jpg");
     background-color: rgba(35, 47, 56, 0.6);
     background-blend-mode: darken;
     background-size: cover;

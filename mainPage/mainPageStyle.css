@@ -55,7 +55,7 @@ body {
 
 .preview {
     position: relative;
-    background-image: url("./preview_image.jpg");
+    background-image: url("images/preview/preview_image.jpg");
     background-size: cover;
     height: 500px;
     padding-top: 184px;
@@ -239,12 +239,12 @@ body {
 }
 
 .the-road-ahead {
-    background-image: url("./the_road_ahead_preview.jpg");
+    background-image: url("images/preview/the_road_ahead_preview.jpg");
     background-size: cover;
 }
 
 .from-top-down {
-    background-image: url("./from_top_down_preview.jpg");
+    background-image: url("images/preview/from_top_down_preview.jpg");
     background-size: cover;
 }
 
@@ -336,7 +336,7 @@ body {
 }
 
 .section-footer {
-    background-image: url("./footer.jpg");
+    background-image: url("../footer.jpg");
     background-size: cover;
     height: 89px;
     padding-top: 28px;
