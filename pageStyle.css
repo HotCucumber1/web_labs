@@ -6,34 +6,33 @@ body {
     overflow-x: hidden;
 }
 
-.header {
+.section-header {
     height: 74px;
     box-sizing: border-box;
     margin-bottom: 82px;
     padding-top: 17px;
 }
 
-.head {
+.section-header-head {
     height: 40px;
     margin-inline: 250px;
     overflow: clip;
 }
 
-.header-logo {
+.section-header__logo {
     display: inline-block;
     margin-top: 5px;
 }
 
-.header-links {
+.section-header-links {
     display: inline-block;
     vertical-align: middle;
     margin-left: auto;
-    height: 40px;
     padding-top: 10px;
     float: right;
 }
 
-.header-link {
+.section-header__link {
     padding-inline: 20px;
     cursor: pointer;
     font-size: 12px;
@@ -42,7 +41,7 @@ body {
     text-decoration: none;
 }
 
-.footer-link {
+.section-footer__link {
     padding-inline: 10px;
     cursor: pointer;
     font-family: "Oxygen", sans-serif;
@@ -51,7 +50,7 @@ body {
     text-decoration: none;
 }
 
-.footer-links {
+.section-footer-links {
     float: right;
     vertical-align: middle;
     display: inline-block;
@@ -89,9 +88,9 @@ body {
     margin-bottom: 135px;
 }
 
-.footer {
+.section-footer {
     height: 89px;
-    background-image: url("../img/footer.jpg");
+    background-image: url("./footer.jpg");
     background-color: rgba(35, 47, 56, 0.6);
     background-blend-mode: darken;
     background-size: cover;
@@ -99,17 +98,17 @@ body {
     box-sizing: border-box;
 }
 
-.foot {
+.section-footer-foot {
     margin-inline: 240px;
     height: 34px;
     overflow: hidden;
 }
 
-.footer-logo path {
+.section-footer__logo path {
     fill: white;
 }
 
-.footer-logo {
+.section-footer__logo {
     display: inline-block;
     margin-top: 3px;
 }
