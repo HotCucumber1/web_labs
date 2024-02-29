@@ -2,201 +2,208 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main page</title>
+    <title>Escape</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="mainPageStyle.css">
+    <link rel="stylesheet" href="main_page_style.css">
 </head>
 
 <body>
-    <header class="section-header">
-        <div class="section-header__head">
-            <img class="section-header__logo" src="../footer_logo.svg" alt="Escape.">
-            <nav class="section-header__header-links links">
-                <a class="section-header__link link">HOME</a>
-                <a class="section-header__link link"> CATEGORIES</a>
-                <a class="section-header__link link">ABOUT</a>
-                <a class="section-header__link link">CONTACT</a>
-            </nav>
-        </div>
-    </header>
-
+<header class="section-header">
+    <div class="section-header__nav-panel">
+        <img class="section-header__logo" src="../footer_logo.svg" alt="Escape.">
+        <nav class="section-header__header-links links">
+            <a class="section-header__link link">HOME</a>
+            <a class="section-header__link link">CATEGORIES</a>
+            <a class="section-header__link link">ABOUT</a>
+            <a class="section-header__link link">CONTACT</a>
+        </nav>
+    </div>
     <div class="preview">
         <div class="preview-heading">
             <h1 class="preview__title">Let's do it together.</h1>
-            <h2 class="preview__subtitle">We travel the world in search of stories. Come along  for the ride.</h2>
+            <h2 class="preview__subtitle">We travel the world in search of stories. Come along for the ride.</h2>
             <button type="button" class="preview__button">View Latest Posts</button>
         </div>
     </div>
+</header>
 
-    <nav class="menu">
-        <div class="menu__button"><a class="menu__link link">Nature</a></div>
-        <div class="menu__button"><a class="menu__link link">Photography</a></div>
-        <div class="menu__button"><a class="menu__link link">Relaxation</a></div>
-        <div class="menu__button"><a class="menu__link link">Vacation</a></div>
-        <div class="menu__button"><a class="menu__link link">Travel</a></div>
-        <div class="menu__button"><a class="menu__link link">Adventure</a></div>
-    </nav>
 
-    <div class="featured-content">
-        <div class="content__title-field"><h3 class="content__title">Featured Posts</h3></div>
-        <hr class="featured-content__line">
-        <div class="featured-content__content">
-            <section class="featured-content__block the-road-ahead">
-                <div class="featured-content__block-heading">
-                    <h4 class="featured-content__block-title">The Road Ahead</h4>
-                    <p class="featured-content__block-subtitle">The road ahead might be paved - it might not be.</p>
+<nav class="menu">
+    <div class="menu__button"><a class="menu__link link">Nature</a></div>
+    <div class="menu__button"><a class="menu__link link">Photography</a></div>
+    <div class="menu__button"><a class="menu__link link">Relaxation</a></div>
+    <div class="menu__button"><a class="menu__link link">Vacation</a></div>
+    <div class="menu__button"><a class="menu__link link">Travel</a></div>
+    <div class="menu__button"><a class="menu__link link">Adventure</a></div>
+</nav>
+
+<div class="featured-content">
+    <div class="content__title-field"><h3 class="content__title">Featured Posts</h3></div>
+    <hr class="featured-content__line">
+    <div class="featured-content__content">
+        <section class="featured-content__block the-road-ahead">
+            <div class="featured-content__block-heading">
+                <h4 class="featured-content__block-title">The Road Ahead</h4>
+                <p class="featured-content__block-subtitle">The road ahead might be paved - it might not be.</p>
+            </div>
+            <div class="featured-content__block-info">
+                <div class="featured-content__block-author">
+                    <img class="author-img" src="images/authors/mat_vogels.png" alt="Mat Vogels">
+                    <p class="featured-content__author-name">Mat Vogels</p>
                 </div>
-                <div class="featured-content__block-info">
-                    <div class="featured-content__block-author">
-                        <img class="author-img" src="images/authors/mat_vogels.png" alt="Mat Vogels">
-                        <p class="featured-content__author-name">Mat Vogels</p>
+                <p class="featured-content__block-date">September 25, 2015</p>
+            </div>
+        </section>
+
+        <section class="featured-content__block from-top-down">
+            <div class="featured-content__block-type"><p class="featured-content__type">ADVENTURE</p></div>
+            <div class="featured-content__block-heading">
+                <h4 class="featured-content__block-title">From Top Down</h4>
+                <p class="featured-content__block-subtitle">Once a year, go someplace you’ve never been before.</p>
+            </div>
+            <div class="featured-content__block-info">
+                <div class="featured-content__block-author">
+                    <img class="author-img" src="images/authors/william_wong.png" alt="William Wong">
+                    <p class="featured-content__author-name">William Wong</p>
+                </div>
+                <p class="featured-content__block-date">September 25, 2015</p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="recent-content">
+    <div class="content__title-field"><h3 class="content__title">Featured Posts</h3></div>
+    <hr class="featured-content__line">
+
+    <div class="recent-content__content">
+        <div class="recent-content__row">
+            <section class="recent-content__block still-standing-tall">
+                <img class="recent-content__block-image" alt="Still Standing Tall"
+                     src="images/preview/still_standing_tall.jpg">
+                <div class="recent-content__block-heading">
+                    <h5 class="recent-content__block-title">Still Standing Tall</h5>
+                    <p class="recent-content__block-subtitle">Life begins at the end of your comfort zone.</p>
+                </div>
+                <hr class="recent-content__block-line">
+                <div class="recent-content__block-info">
+                    <div class="recent-content__block-author">
+                        <img class="resent-content__author-img" src="images/authors/william_wong.png"
+                             alt="William Wong">
+                        <p class="recent-content__author-name">William Wong</p>
                     </div>
-                    <p class="featured-content__block-date">September 25, 2015</p>
+                    <p class="recent-content__block-date">9/25/2015</p>
                 </div>
             </section>
 
-            <section class="featured-content__block from-top-down">
-                <div class="featured-content__block-type"><p class="featured-content__type">ADVENTURE</p></div>
-                <div class="featured-content__block-heading">
-                    <h4 class="featured-content__block-title">From Top Down</h4>
-                    <p class="featured-content__block-subtitle">Once a year, go someplace you’ve never been before.</p>
+            <section class="recent-content__block sunny-side-up">
+                <img class="recent-content__block-image" alt="Sunny Side Up" src="images/preview/sunny_side_up.jpg">
+                <div class="recent-content__block-heading">
+                    <h5 class="recent-content__block-title">Sunny Side Up</h5>
+                    <p class="recent-content__block-subtitle">No place is ever as bad as they tell you it’s going to
+                        be.</p>
                 </div>
-                <div class="featured-content__block-info">
-                    <div class="featured-content__block-author">
-                        <img class="author-img" src="images/authors/william_wong.png" alt="William Wong">
-                        <p class="featured-content__author-name">William Wong</p>
+                <hr class="recent-content__block-line">
+                <div class="recent-content__block-info">
+                    <div class="recent-content__block-author">
+                        <img class="resent-content__author-img" src="images/authors/mat_vogels.png" alt="Mat Vogels">
+                        <p class="recent-content__author-name">Mat Vogels</p>
                     </div>
-                    <p class="featured-content__block-date">September 25, 2015</p>
+                    <p class="recent-content__block-date">9/25/2015</p>
+                </div>
+            </section>
+
+            <section class="recent-content__block water-falls">
+                <img class="recent-content__block-image" alt="Water Falls" src="images/preview/water_falls.jpg">
+                <div class="recent-content__block-heading">
+                    <h5 class="recent-content__block-title">Water Falls</h5>
+                    <p class="recent-content__block-subtitle">We travel not to escape life, but for life not to escape
+                        us.</p>
+                </div>
+                <hr class="recent-content__block-line">
+                <div class="recent-content__block-info">
+                    <div class="recent-content__block-author">
+                        <img class="resent-content__author-img" src="images/authors/mat_vogels.png" alt="Mat Vogels">
+                        <p class="recent-content__author-name">Mat Vogels</p>
+                    </div>
+                    <p class="recent-content__block-date">9/25/2015</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="recent-content__row">
+            <section class="recent-content__block through-the-mist">
+                <img class="recent-content__block-image" alt="Through the Mist"
+                     src="images/preview/through_the_mist.jpg">
+                <div class="recent-content__block-heading">
+                    <h5 class="recent-content__block-title">Through the Mist</h5>
+                    <p class="recent-content__block-subtitle">Travel makes you see what a tiny place you occupy in the
+                        world.</p>
+                </div>
+                <hr class="recent-content__block-line">
+                <div class="recent-content__block-info">
+                    <div class="recent-content__block-author">
+                        <img class="resent-content__author-img" src="images/authors/william_wong.png"
+                             alt="William Wong">
+                        <p class="recent-content__author-name">William Wong</p>
+                    </div>
+                    <p class="recent-content__block-date">9/25/2015</p>
+                </div>
+            </section>
+
+            <section class="recent-content__block awaken-early">
+                <img class="recent-content__block-image" alt="Awaken Early" src="images/preview/awaken_early.jpg">
+                <div class="recent-content__block-heading">
+                    <h5 class="recent-content__block-title">Awaken Early</h5>
+                    <p class="recent-content__block-subtitle">Not all those who wander are lost.</p>
+                </div>
+                <hr class="recent-content__block-line">
+                <div class="recent-content__block-info">
+                    <div class="recent-content__block-author">
+                        <img class="resent-content__author-img" src="images/authors/mat_vogels.png" alt="Mat Vogels">
+                        <p class="recent-content__author-name">Mat Vogels</p>
+                    </div>
+                    <p class="recent-content__block-date">9/25/2015</p>
+                </div>
+            </section>
+
+            <section class="recent-content__block try-it-always">
+                <img class="recent-content__block-image" alt="Try it Always" src="images/preview/try_it_always.jpg">
+                <div class="recent-content__block-heading">
+                    <h5 class="recent-content__block-title">Try it Always</h5>
+                    <p class="recent-content__block-subtitle">The world is a book, and those who do not travel read only
+                        one
+                        page.</p>
+                </div>
+                <hr class="recent-content__block-line">
+                <div class="recent-content__block-info">
+                    <div class="recent-content__block-author">
+                        <img class="resent-content__author-img" src="images/authors/mat_vogels.png" alt="Mat Vogels">
+                        <p class="recent-content__author-name">Mat Vogels</p>
+                    </div>
+                    <p class="recent-content__block-date">9/25/2015</p>
                 </div>
             </section>
         </div>
     </div>
+</div>
 
-
-    <div class="recent-content">
-        <div class="content__title-field"><h3 class="content__title">Featured Posts</h3></div>
-        <hr class="featured-content__line">
-
-        <div class="recent-content__content">
-            <div class="recent-content__row">
-                <section class="recent-content__block still-standing-tall">
-                    <img class="recent-content__block-image" alt="Still Standing Tall" src="images/preview/still_standing_tall.jpg">
-                    <div class="recent-content__block-heading">
-                        <h5 class="recent-content__block-title">Still Standing Tall</h5>
-                        <p class="recent-content__block-subtitle">Life begins at the end of your comfort zone.</p>
-                    </div>
-                    <hr class="recent-content__block-line">
-                    <div class="recent-content__block-info">
-                        <div class="recent-content__block-author">
-                            <img class="resent-content__author-img" src="images/authors/william_wong.png" alt="William Wong">
-                            <p class="recent-content__author-name">William Wong</p>
-                        </div>
-                        <p class="recent-content__block-date">9/25/2015</p>
-                    </div>
-                </section>
-
-                <section class="recent-content__block sunny-side-up">
-                    <img class="recent-content__block-image" alt="Sunny Side Up" src="images/preview/sunny_side_up.jpg">
-                    <div class="recent-content__block-heading">
-                        <h5 class="recent-content__block-title">Sunny Side Up</h5>
-                        <p class="recent-content__block-subtitle">No place is ever as bad as they tell you it’s going to be.</p>
-                    </div>
-                    <hr class="recent-content__block-line">
-                    <div class="recent-content__block-info">
-                        <div class="recent-content__block-author">
-                            <img class="resent-content__author-img" src="images/authors/mat_vogels.png" alt="Mat Vogels">
-                            <p class="recent-content__author-name">Mat Vogels</p>
-                        </div>
-                        <p class="recent-content__block-date">9/25/2015</p>
-                    </div>
-                </section>
-
-                <section class="recent-content__block water-falls">
-                    <img class="recent-content__block-image" alt="Water Falls" src="images/preview/water_falls.jpg">
-                    <div class="recent-content__block-heading">
-                        <h5 class="recent-content__block-title">Water Falls</h5>
-                        <p class="recent-content__block-subtitle">We travel not to escape life, but for life not to escape us.</p>
-                    </div>
-                    <hr class="recent-content__block-line">
-                    <div class="recent-content__block-info">
-                        <div class="recent-content__block-author">
-                            <img class="resent-content__author-img" src="images/authors/mat_vogels.png" alt="Mat Vogels">
-                            <p class="recent-content__author-name">Mat Vogels</p>
-                        </div>
-                        <p class="recent-content__block-date">9/25/2015</p>
-                    </div>
-                </section>
-            </div>
-
-            <div class="recent-content__row">
-                <section class="recent-content__block through-the-mist">
-                    <img class="recent-content__block-image" alt="Through the Mist" src="images/preview/through_the_mist.jpg">
-                    <div class="recent-content__block-heading">
-                        <h5 class="recent-content__block-title">Through the Mist</h5>
-                        <p class="recent-content__block-subtitle">Travel makes you see what a tiny place you occupy in the world.</p>
-                    </div>
-                    <hr class="recent-content__block-line">
-                    <div class="recent-content__block-info">
-                        <div class="recent-content__block-author">
-                            <img class="resent-content__author-img" src="images/authors/william_wong.png" alt="William Wong">
-                            <p class="recent-content__author-name">William Wong</p>
-                        </div>
-                        <p class="recent-content__block-date">9/25/2015</p>
-                    </div>
-                </section>
-
-                <section class="recent-content__block awaken-early">
-                    <img class="recent-content__block-image" alt="Awaken Early" src="images/preview/awaken_early.jpg">
-                    <div class="recent-content__block-heading">
-                        <h5 class="recent-content__block-title">Awaken Early</h5>
-                        <p class="recent-content__block-subtitle">Not all those who wander are lost.</p>
-                    </div>
-                    <hr class="recent-content__block-line">
-                    <div class="recent-content__block-info">
-                        <div class="recent-content__block-author">
-                            <img class="resent-content__author-img" src="images/authors/mat_vogels.png" alt="Mat Vogels">
-                            <p class="recent-content__author-name">Mat Vogels</p>
-                        </div>
-                        <p class="recent-content__block-date">9/25/2015</p>
-                    </div>
-                </section>
-
-                <section class="recent-content__block try-it-always">
-                    <img class="recent-content__block-image" alt="Try it Always" src="images/preview/try_it_always.jpg">
-                    <div class="recent-content__block-heading">
-                        <h5 class="recent-content__block-title">Try it Always</h5>
-                        <p class="recent-content__block-subtitle">The world is a book, and those who do not travel read only one page.</p>
-                    </div>
-                    <hr class="recent-content__block-line">
-                    <div class="recent-content__block-info">
-                        <div class="recent-content__block-author">
-                            <img class="resent-content__author-img" src="images/authors/mat_vogels.png" alt="Mat Vogels">
-                            <p class="recent-content__author-name">Mat Vogels</p>
-                        </div>
-                        <p class="recent-content__block-date">9/25/2015</p>
-                    </div>
-                </section>
-            </div>
-        </div>
+<footer class="section-footer">
+    <div class="section-footer__nav-panel">
+        <img class="section-footer__logo" src="../footer_logo.svg" alt="Escape.">
+        <nav class="section-footer__links links">
+            <a class="section-footer__link link">HOME</a>
+            <a class="section-footer__link link">CATEGORIES</a>
+            <a class="section-footer__link link">ABOUT</a>
+            <a class="section-footer__link link">CONTACT</a>
+        </nav>
     </div>
-
-    <footer class="section-footer">
-        <div class="section-footer__foot">
-            <img class="section-footer__logo" src="../footer_logo.svg" alt="Escape.">
-            <nav class="section-footer__links links">
-                <a class="section-footer__link link">HOME</a>
-                <a class="section-footer__link link">CATEGORIES</a>
-                <a class="section-footer__link link">ABOUT</a>
-                <a class="section-footer__link link">CONTACT</a>
-            </nav>
-        </div>
-    </footer>
+</footer>
 </body>
 </html>
