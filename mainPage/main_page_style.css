@@ -92,27 +92,24 @@ body {
 }
 
 .menu {
-    display: flex;
-    justify-content: space-between;
-    max-width: 960px;
-    margin-inline: auto;
-    height: 65px;
-    padding-inline: 10px;
-    padding-top: 10px;
+    background-color: white;
 }
 
-.menu__button {
-    width: 139px;
-    height: 46px;
-    text-align: center;
-    padding-top: 13px;
+.menu__list {
+    max-width: 960px;
+    margin-inline: auto;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
 }
 
 .menu__link {
+    display: block;
     font-family: "Lora", serif;
     font-weight: 400;
     font-size: 14px;
     color: #768088;
+    padding-block: 22px;
 }
 
 .featured-content {
