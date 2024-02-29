@@ -22,6 +22,12 @@ body {
     cursor: pointer;
 }
 
+.nav-panel {
+    display: flex;
+    max-width: 960px;
+    margin-inline: auto;
+}
+
 .section-header {
     width: 100%;
     padding: 17px 0 157px;
@@ -32,9 +38,7 @@ body {
 }
 
 .section-header__nav-panel {
-    display: flex;
     height: 40px;
-    margin-inline: 250px;
     margin-bottom: 110px;
 }
 
@@ -335,7 +339,8 @@ body {
 .section-footer__nav-panel {
     display: flex;
     height: 34px;
-    margin-inline: 250px;
+    max-width: 960px;
+    margin-inline: auto;
 }
 
 .section-footer__logo {
