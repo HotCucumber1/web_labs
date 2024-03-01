@@ -38,7 +38,6 @@ body {
 }
 
 .section-header__nav-panel {
-    height: 40px;
     margin-bottom: 110px;
 }
 
@@ -181,10 +180,6 @@ body {
 .featured-content__block-info {
     display: flex;
     margin-left: 20px;
-}
-
-.featured-content__block-author {
-    display: flex;
 }
 
 .author-img {
