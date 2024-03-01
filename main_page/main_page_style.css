@@ -296,10 +296,6 @@ body {
     height: 48px
 }
 
-.recent-content__block-author {
-    display: flex;
-}
-
 .resent-content__author-img {
     max-width: 26px;
     max-height: 26px;
