@@ -213,22 +213,22 @@ body {
 }
 
 .featured-content__block-type {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    border-radius: 2px;
-    background-color: #DD783F;
     height: 26px;
     width: 87px;
 }
 
 .featured-content__type {
+    position: absolute;
+    top: 20px;
+    left: 20px;
     font-family: "Oxygen", sans-serif;
     font-weight: 400;
     font-size: 12px;
+    line-height: 13px;
     color: white;
-    margin-top: 6px;
-    text-align: center;
+    border-radius: 2px;
+    background-color: #DD783F;
+    padding: 6px 9px;
 }
 
 .the-road-ahead {
