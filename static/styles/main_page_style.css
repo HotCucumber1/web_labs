@@ -31,7 +31,7 @@ body {
 .section-header {
     width: 100%;
     padding: 17px 0 157px;
-    background-image: url("images/preview/preview_image.jpg");
+    background-image: url("../images/main_page_images/preview/preview_image.jpg");
     background-color: rgba(35, 47, 56, 0.6);
     background-blend-mode: darken;
     background-size: cover;
@@ -227,12 +227,12 @@ body {
 }
 
 .the-road-ahead {
-    background-image: url("images/preview/the_road_ahead_preview.jpg");
+    background-image: url("../images/main_page_images/preview/the_road_ahead_preview.jpg");
     background-size: cover;
 }
 
 .from-top-down {
-    background-image: url("images/preview/from_top_down_preview.jpg");
+    background-image: url("../images/main_page_images/preview/from_top_down_preview.jpg");
     background-size: cover;
 }
 
@@ -319,7 +319,7 @@ body {
 }
 
 .section-footer {
-    background-image: url("../footer.jpg");
+    background-image: url("../images/footer.jpg");
     background-size: cover;
     height: 89px;
     padding-top: 28px;
