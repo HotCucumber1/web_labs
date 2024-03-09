@@ -1,4 +1,6 @@
-<section class="<?= $post['style']?>" >
+<section class="featured-content__block block"
+         style="background-image: url('<?= $post["preview"]?>');
+                background-size: cover;">
     <?php if ($post['type'] != ''): ?>
         <p class="featured-content__type"><?= $post['type'] ?></p>
     <?php endif ?>

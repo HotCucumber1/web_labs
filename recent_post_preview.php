@@ -1,6 +1,6 @@
 <section class="recent-content__block block">
     <img class="recent-content__block-image" alt="<?= $post['title']?>"
-         src="<?= $post['img_modifier']?>">
+         src="<?= $post['preview']?>">
     <div class="recent-content__block-heading">
         <h5 class="recent-content__block-title"><?= $post['title']?></h5>
         <p class="recent-content__block-subtitle"><?= $post['subtitle']?></p>

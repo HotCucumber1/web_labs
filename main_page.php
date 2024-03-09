@@ -3,22 +3,20 @@ $featured_posts = [
     [
         'title' => 'The Road Ahead',
         'subtitle' => 'The road ahead might be paved - it might not be.',
-        'img_modifier' => './static/images/main_page_images/preview/the_road_ahead_preview.jpg',
+        'preview' => './static/images/main_page_images/preview/the_road_ahead_preview.jpg',
         'author' => 'Mat Vogels',
         'date' => 'September 25, 2015',
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
         'type' => '',
-        'style' => 'featured-content__block the-road-ahead block',
     ],
     [
         'title' => 'From Top Down',
         'subtitle' => 'Once a year, go someplace you’ve never been before.',
-        'img_modifier' => './static/images/main_page_images/preview/from_top_down_preview.jpg',
+        'preview' => './static/images/main_page_images/preview/from_top_down_preview.jpg',
         'author' => 'William Wong',
         'date' => 'September 25, 2015',
         'author_icon' => './static/images/main_page_images/authors/william_wong.png',
         'type' => 'ADVENTURE',
-        'style' => 'featured-content__block from-top-down block',
     ],
 ];
 
@@ -26,7 +24,7 @@ $recent_posts = [
     [
         'title' => 'Still Standing Tall',
         'subtitle' => 'Life begins at the end of your comfort zone.',
-        'img_modifier' => './static/images/main_page_images/preview/still_standing_tall.jpg',
+        'preview' => './static/images/main_page_images/preview/still_standing_tall.jpg',
         'author' => 'William Wong',
         'date' => '9/25/2015',
         'author_icon' => './static/images/main_page_images/authors/william_wong.png',
@@ -34,7 +32,7 @@ $recent_posts = [
     [
         'title' => 'Sunny Side Up',
         'subtitle' => 'No place is ever as bad as they tell you it’s going to be.',
-        'img_modifier' => './static/images/main_page_images/preview/sunny_side_up.jpg',
+        'preview' => './static/images/main_page_images/preview/sunny_side_up.jpg',
         'author' => 'Mat Vogels',
         'date' => '9/25/2015',
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
@@ -42,7 +40,7 @@ $recent_posts = [
     [
         'title' => 'Water Falls',
         'subtitle' => 'We travel not to escape life, but for life not to escape us.',
-        'img_modifier' => './static/images/main_page_images/preview/water_falls.jpg',
+        'preview' => './static/images/main_page_images/preview/water_falls.jpg',
         'author' => 'Mat Vogels',
         'date' => '9/25/2015',
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
@@ -50,7 +48,7 @@ $recent_posts = [
     [
         'title' => 'Through the Mist',
         'subtitle' => 'Travel makes you see what a tiny place you occupy in the world.',
-        'img_modifier' => './static/images/main_page_images/preview/through_the_mist.jpg',
+        'preview' => './static/images/main_page_images/preview/through_the_mist.jpg',
         'author' => 'William Wong',
         'date' => '9/25/2015',
         'author_icon' => './static/images/main_page_images/authors/william_wong.png',
@@ -58,7 +56,7 @@ $recent_posts = [
     [
         'title' => 'Awaken Early',
         'subtitle' => 'Not all those who wander are lost.',
-        'img_modifier' => './static/images/main_page_images/preview/awaken_early.jpg',
+        'preview' => './static/images/main_page_images/preview/awaken_early.jpg',
         'author' => 'Mat Vogels',
         'date' => '9/25/2015',
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
@@ -66,7 +64,7 @@ $recent_posts = [
     [
         'title' => 'Try it Always',
         'subtitle' => 'The world is a book, and those who do not travel read only one page.',
-        'img_modifier' => './static/images/main_page_images/preview/try_it_always.jpg',
+        'preview' => './static/images/main_page_images/preview/try_it_always.jpg',
         'author' => 'Mat Vogels',
         'date' => '9/25/2015',
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
@@ -80,9 +78,6 @@ $recent_posts = [
 <head>
     <meta charset="UTF-8">
     <title>Escape</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
