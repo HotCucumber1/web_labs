@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -8,16 +9,13 @@ body {
 
 .section-header {
     height: 74px;
-    box-sizing: border-box;
+    padding-top: 20px;
     margin-bottom: 82px;
-    padding-top: 17px;
 }
 
 .section-header__nav-panel {
-    height: 40px;
     max-width: 960px;
     margin-inline: auto;
-    background-color: #DD783F;
 }
 
 .section-header__logo {
@@ -96,14 +94,12 @@ body {
     background-color: rgba(35, 47, 56, 0.6);
     background-blend-mode: darken;
     background-size: cover;
-    padding-top: 28px;
-    box-sizing: border-box;
+    padding-top: 31px;
 }
 
 .section-footer__nav-panel {
     max-width: 960px;
     margin-inline: auto;
-    height: 34px;
 }
 
 .section-footer__logo path {
