@@ -84,8 +84,8 @@ body {
 }
 
 .preview__button {
-    width: 167px;
-    height: 44px;
+    padding-inline: 31px;
+    padding-block: 12px;
     background-color: #DD783F;
     border-radius: 3px;
     border: none;
