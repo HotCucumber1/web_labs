@@ -1,4 +1,4 @@
-<section class="featured-content__block block"
+<a class="featured-content__block link" title="<?= $post['title']?>" href="/post?id=<?= $post['id'] ?>"
          style="background-image: url('<?= $post["preview"]?>');
                 background-size: cover;">
     <?php if ($post['type'] != ''): ?>
@@ -13,5 +13,5 @@
         <span class="featured-content__author-name"><?= $post['author'] ?></span>
         <span class="featured-content__block-date"><?= $post['date'] ?></span>
     </div>
-</section>
+</a>
 

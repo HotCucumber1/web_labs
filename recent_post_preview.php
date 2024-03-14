@@ -1,4 +1,4 @@
-<section class="recent-content__block block">
+<a class="recent-content__block link" title="<?= $post['title']?>" href="/post?id=<?= $post['id'] ?>">
     <img class="recent-content__block-image" alt="<?= $post['title']?>"
          src="<?= $post['preview']?>">
     <div class="recent-content__block-heading">
@@ -11,4 +11,4 @@
         <span class="recent-content__author-name"><?= $post['author']?></span>
         <span class="recent-content__block-date"><?= $post['date']?></span>
     </div>
-</section>
+</a>

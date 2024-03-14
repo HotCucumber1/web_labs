@@ -1,6 +1,7 @@
 <?php
 $featured_posts = [
     [
+        'id' => 1,
         'title' => 'The Road Ahead',
         'subtitle' => 'The road ahead might be paved - it might not be.',
         'preview' => './static/images/main_page_images/preview/the_road_ahead_preview.jpg',
@@ -10,6 +11,7 @@ $featured_posts = [
         'type' => '',
     ],
     [
+        'id' => 2,
         'title' => 'From Top Down',
         'subtitle' => 'Once a year, go someplace you’ve never been before.',
         'preview' => './static/images/main_page_images/preview/from_top_down_preview.jpg',
@@ -22,6 +24,7 @@ $featured_posts = [
 
 $recent_posts = [
     [
+        'id' => 3,
         'title' => 'Still Standing Tall',
         'subtitle' => 'Life begins at the end of your comfort zone.',
         'preview' => './static/images/main_page_images/preview/still_standing_tall.jpg',
@@ -30,6 +33,7 @@ $recent_posts = [
         'author_icon' => './static/images/main_page_images/authors/william_wong.png',
     ],
     [
+        'id' => 4,
         'title' => 'Sunny Side Up',
         'subtitle' => 'No place is ever as bad as they tell you it’s going to be.',
         'preview' => './static/images/main_page_images/preview/sunny_side_up.jpg',
@@ -38,6 +42,7 @@ $recent_posts = [
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
     ],
     [
+        'id' => 5,
         'title' => 'Water Falls',
         'subtitle' => 'We travel not to escape life, but for life not to escape us.',
         'preview' => './static/images/main_page_images/preview/water_falls.jpg',
@@ -46,6 +51,7 @@ $recent_posts = [
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
     ],
     [
+        'id' => 6,
         'title' => 'Through the Mist',
         'subtitle' => 'Travel makes you see what a tiny place you occupy in the world.',
         'preview' => './static/images/main_page_images/preview/through_the_mist.jpg',
@@ -54,6 +60,7 @@ $recent_posts = [
         'author_icon' => './static/images/main_page_images/authors/william_wong.png',
     ],
     [
+        'id' => 7,
         'title' => 'Awaken Early',
         'subtitle' => 'Not all those who wander are lost.',
         'preview' => './static/images/main_page_images/preview/awaken_early.jpg',
@@ -62,6 +69,7 @@ $recent_posts = [
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
     ],
     [
+        'id' => 8,
         'title' => 'Try it Always',
         'subtitle' => 'The world is a book, and those who do not travel read only one page.',
         'preview' => './static/images/main_page_images/preview/try_it_always.jpg',
