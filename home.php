@@ -6,7 +6,7 @@ $featured_posts = [
         'subtitle' => 'The road ahead might be paved - it might not be.',
         'preview' => './static/images/main_page_images/preview/the_road_ahead_preview.jpg',
         'author' => 'Mat Vogels',
-        'date' => 'September 25, 2015',
+        'date' => 1443182400,
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
         'type' => '',
     ],
@@ -16,7 +16,7 @@ $featured_posts = [
         'subtitle' => 'Once a year, go someplace you’ve never been before.',
         'preview' => './static/images/main_page_images/preview/from_top_down_preview.jpg',
         'author' => 'William Wong',
-        'date' => 'September 25, 2015',
+        'date' => 1443182400,
         'author_icon' => './static/images/main_page_images/authors/william_wong.png',
         'type' => 'ADVENTURE',
     ],
@@ -29,7 +29,7 @@ $recent_posts = [
         'subtitle' => 'Life begins at the end of your comfort zone.',
         'preview' => './static/images/main_page_images/preview/still_standing_tall.jpg',
         'author' => 'William Wong',
-        'date' => '9/25/2015',
+        'date' => 1443182400,
         'author_icon' => './static/images/main_page_images/authors/william_wong.png',
     ],
     [
@@ -38,7 +38,7 @@ $recent_posts = [
         'subtitle' => 'No place is ever as bad as they tell you it’s going to be.',
         'preview' => './static/images/main_page_images/preview/sunny_side_up.jpg',
         'author' => 'Mat Vogels',
-        'date' => '9/25/2015',
+        'date' => 1443182400,
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
     ],
     [
@@ -47,7 +47,7 @@ $recent_posts = [
         'subtitle' => 'We travel not to escape life, but for life not to escape us.',
         'preview' => './static/images/main_page_images/preview/water_falls.jpg',
         'author' => 'Mat Vogels',
-        'date' => '9/25/2015',
+        'date' => 1443182400,
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
     ],
     [
@@ -56,7 +56,7 @@ $recent_posts = [
         'subtitle' => 'Travel makes you see what a tiny place you occupy in the world.',
         'preview' => './static/images/main_page_images/preview/through_the_mist.jpg',
         'author' => 'William Wong',
-        'date' => '9/25/2015',
+        'date' => 1443182400,
         'author_icon' => './static/images/main_page_images/authors/william_wong.png',
     ],
     [
@@ -65,7 +65,7 @@ $recent_posts = [
         'subtitle' => 'Not all those who wander are lost.',
         'preview' => './static/images/main_page_images/preview/awaken_early.jpg',
         'author' => 'Mat Vogels',
-        'date' => '9/25/2015',
+        'date' => 1443182400,
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
     ],
     [
@@ -74,7 +74,7 @@ $recent_posts = [
         'subtitle' => 'The world is a book, and those who do not travel read only one page.',
         'preview' => './static/images/main_page_images/preview/try_it_always.jpg',
         'author' => 'Mat Vogels',
-        'date' => '9/25/2015',
+        'date' => 1443182400,
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
     ],
 ]

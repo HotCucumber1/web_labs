@@ -1,36 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My journal</title>
+<?php
+$postId = $_GET['id'];
 
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
-
-    <link href="static/styles/the_road_ahead_style.css" rel="stylesheet">
-</head>
-
-<body>
-    <header class="section-header">
-        <div class="section-header__nav-panel">
-            <img class="section-header__logo" src="./static/images/header_logo.svg" alt="Escape.">
-
-            <nav class="section-header__links">
-                <a class="section-header__link">HOME</a>
-                <a class="section-header__link">CATEGORIES</a>
-                <a class="section-header__link">ABOUT</a>
-                <a class="section-header__link">CONTACT</a>
-            </nav>
-        </div>
-    </header>
-
-    <h1 class="title">The Road Ahead</h1>
-    <h2 class="subtitle">The road ahead might be paved - it might not be.</h2>
-
-    <img class="image" src="static/images/img1.jpg" alt="MainImage">
-
-    <p class="mainText">
-        Dark spruce forest frowned on either side the frozen waterway.
+$postInfo = [
+    'id' => 1,
+    'title' => 'The Road Ahead',
+    'subtitle' => 'The road ahead might be paved - it might not be.',
+    'postImage' => './static/images/img1.jpg',
+    'postContent' => 'Dark spruce forest frowned on either side the frozen waterway.
         The trees had been stripped by a recent wind of their white covering of frost, and they seemed to lean towards each other, black and ominous, in the fading light.
         A vast silence reigned over the land.
         The land itself was a desolation, lifeless, without movement, so lone and cold that the spirit of it was not even that of sadness.
@@ -62,7 +38,45 @@
         Their bodies were covered with fur and soft-tanned leather.
         Eyelashes and cheeks and lips were so coated with the crystals from their frozen breath that their faces were not discernible.
         This gave them the seeming of ghostly masques, undertakers in a spectral world at the funeral of some ghost.
-        But under it all they were men, penetrating the land of desolation and mockery and silence, puny adventurers bent on colossal adventure, pitting themselves against the might of a world as remote and alien and pulseless as the abysses of space.
+        But under it all they were men, penetrating the land of desolation and mockery and silence, puny adventurers bent on colossal adventure, pitting themselves against the might of a world as remote and alien and pulseless as the abysses of space.',
+    'author' => 'Mat Vogels',
+    'date' => 1443182400,
+];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $postId ?></title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+
+    <link href="static/styles/the_road_ahead_style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="section-header">
+        <div class="section-header__nav-panel">
+            <img class="section-header__logo" src="./static/images/header_logo.svg" alt="Escape.">
+
+            <nav class="section-header__links">
+                <a class="section-header__link">HOME</a>
+                <a class="section-header__link">CATEGORIES</a>
+                <a class="section-header__link">ABOUT</a>
+                <a class="section-header__link">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <h1 class="title"><?= $postInfo['title'] ?></h1>
+    <h2 class="subtitle"><?= $postInfo['subtitle'] ?></h2>
+
+    <img class="image" src="<?= $postInfo['postImage'] ?>" alt="<?= $postInfo['title'] ?>">
+
+    <p class="mainText">
+        <?= $postInfo['postContent'] ?>
     </p>
 
     <footer class="section-footer">

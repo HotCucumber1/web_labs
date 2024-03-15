@@ -9,6 +9,6 @@
     <div class="recent-content__block-info">
         <img class="resent-content__author-img" src="<?= $post['author_icon']?>" alt="<?= $post['author']?>">
         <span class="recent-content__author-name"><?= $post['author']?></span>
-        <span class="recent-content__block-date"><?= $post['date']?></span>
+        <span class="recent-content__block-date"><?= date('n/d/Y', $post['date'])?></span>
     </div>
 </a>
