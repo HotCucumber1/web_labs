@@ -14,4 +14,3 @@
         <span class="featured-content__block-date"><?= date('F d, Y', $post['date'])?></span>
     </div>
 </a>
-

@@ -29,7 +29,7 @@ body {
     width: 100%;
     padding: 17px 0 157px;
     background-image: url("../images/main_page_images/preview/preview_image.jpg");
-    background-color: rgba(35, 47, 56, 0.6);
+    background-color: #232F3899;
     background-blend-mode: darken;
     background-size: cover;
 }
@@ -311,9 +311,9 @@ body {
     background-size: cover;
     height: 89px;
     padding-top: 28px;
-    background-color: #232f38;
+    /*background-color: #232f38;
     opacity: 60%;
-    background-blend-mode: darken;
+    background-blend-mode: darken;*/
 }
 
 .section-footer__nav-panel {
