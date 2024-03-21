@@ -1,4 +1,4 @@
-<a class="recent-content__block link" title="<?= $post['title']?>" href="/post?id=<?= $post['id'] ?>">
+<a class="recent-content-block link" title="<?= $post['title']?>" href="/post?id=<?= $post['id'] ?>">
     <img class="recent-content__block-image" alt="<?= $post['title']?>"
          src="<?= $post['preview']?>">
     <div class="recent-content__block-heading">

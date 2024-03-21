@@ -90,15 +90,15 @@ $recent_posts = [
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="static/styles/main_page_style.css">
+    <link rel="stylesheet" href="/static/styles/main_page_style.css">
 </head>
 
 <body>
 <header class="section-header">
     <div class="section-header__nav-panel nav-panel">
-        <img class="section-header__logo" src="static/images/footer_logo.svg" alt="Escape.">
+        <a href="/home"><img class="section-header__logo" src="static/images/footer_logo.svg" alt="Escape."></a>
         <nav class="section-header__header-links links">
-            <a class="section-header__link link">HOME</a>
+            <a class="section-header__link link" href="/home">HOME</a>
             <a class="section-header__link link">CATEGORIES</a>
             <a class="section-header__link link">ABOUT</a>
             <a class="section-header__link link">CONTACT</a>

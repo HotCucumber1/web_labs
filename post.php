@@ -53,16 +53,16 @@ $postInfo = [
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
 
-    <link href="static/styles/the_road_ahead_style.css" rel="stylesheet">
+    <link href="/static/styles/the_road_ahead_style.css" rel="stylesheet">
 </head>
 
 <body>
     <header class="section-header">
         <div class="section-header__nav-panel">
-            <img class="section-header__logo" src="./static/images/header_logo.svg" alt="Escape.">
+            <a href="/home"><img class="section-header__logo" src="/static/images/header_logo.svg" alt="Escape."></a>
 
             <nav class="section-header__links">
-                <a class="section-header__link">HOME</a>
+                <a class="section-header__link" href="/home">HOME</a>
                 <a class="section-header__link">CATEGORIES</a>
                 <a class="section-header__link">ABOUT</a>
                 <a class="section-header__link">CONTACT</a>
@@ -81,7 +81,7 @@ $postInfo = [
 
     <footer class="section-footer">
         <div class="section-footer__nav-panel">
-            <img class="section-footer__logo" src="static/images/footer_logo.svg" alt="Escape.">
+            <img class="section-footer__logo" src="/static/images/footer_logo.svg" alt="Escape.">
 
             <nav class="section-footer__links">
                 <a class="section-footer__link">HOME</a>

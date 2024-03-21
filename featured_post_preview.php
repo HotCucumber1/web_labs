@@ -1,5 +1,5 @@
-<a class="featured-content__block link" title="<?= $post['title']?>" href="/post?id=<?= $post['id'] ?>"
-         style="background-image: url('<?= $post["preview"]?>');
+<a class="featured-content-block link" title="<?= $post['title']?>" href="/post?id=<?= $post['id'] ?>"
+   style="background-image: url('<?= $post["preview"]?>');
                 background-size: cover;">
     <?php if ($post['type'] != ''): ?>
         <p class="featured-content__type"><?= $post['type'] ?></p>
