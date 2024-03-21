@@ -153,7 +153,7 @@ $recent_posts = [
     <div class="section-footer__nav-panel nav-panel">
         <img class="section-footer__logo" src="static/images/footer_logo.svg" alt="Escape.">
         <nav class="section-footer__links links">
-            <a class="section-footer__link link">HOME</a>
+            <a class="section-footer__link link" href="/home">HOME</a>
             <a class="section-footer__link link">CATEGORIES</a>
             <a class="section-footer__link link">ABOUT</a>
             <a class="section-footer__link link">CONTACT</a>

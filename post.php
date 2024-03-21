@@ -84,7 +84,7 @@ $postInfo = [
             <img class="section-footer__logo" src="/static/images/footer_logo.svg" alt="Escape.">
 
             <nav class="section-footer__links">
-                <a class="section-footer__link">HOME</a>
+                <a class="section-footer__link" href="/home">HOME</a>
                 <a class="section-footer__link">CATEGORIES</a>
                 <a class="section-footer__link">ABOUT</a>
                 <a class="section-footer__link">CONTACT</a>

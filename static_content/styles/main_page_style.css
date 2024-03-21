@@ -308,6 +308,8 @@ body {
 
 .section-footer {
     background-image: url("../images/footer.jpg");
+    background-color: rgba(35, 47, 56, 0.6);
+    background-blend-mode: darken;
     background-size: cover;
     height: 89px;
     padding-top: 28px;
