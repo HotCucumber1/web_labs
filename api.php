@@ -11,8 +11,8 @@ function saveFile(string $file, string $data): void {
         echo "Ошибка записи в файл";
         return;
     }
-    echo "Данные успешно сохранены";
     fclose($myFile);
+    echo "Данные успешно сохранены";
 }
 
 
@@ -27,6 +27,11 @@ function saveImage(string $image): void {
 $method = $_SERVER['REQUEST_METHOD'];
 echo $method . "<br>";
 
-$jsonData = file_get_contents("php://input");
-$arrayData = json_decode($jsonData, associative: true);
-saveImage($arrayData['image']);
+if ($method == 'POST') {
+    $jsonData = file_get_contents("php://input");
+    $arrayData = json_decode($jsonData, associative: true);
+    saveImage($arrayData['image']);
+}
+else {
+    echo "Отправьте POST-запрос" . "<br>";
+}

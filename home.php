@@ -1,5 +1,5 @@
 <?php
-$featured_posts = [
+/*$featured_posts = [
     [
         'id' => 1,
         'title' => 'The Road Ahead',
@@ -77,7 +77,18 @@ $recent_posts = [
         'date' => 1443182400,
         'author_icon' => './static/images/main_page_images/authors/mat_vogels.png',
     ],
-]
+];*/
+
+include 'DBconnection.php';
+
+function getPostsFromDB(mysqli $connect): mysqli_result {
+    $sql_query = "SELECT * FROM post";
+    return $connect -> query($sql_query);
+}
+
+$connection = createDBConnection();
+$posts = getPostsFromDB($connection);
+closeDBConnection($connection);
 ?>
 
 
@@ -106,9 +117,9 @@ $recent_posts = [
     </div>
     <div class="preview">
         <div class="preview-heading">
-            <h1 class="preview__title">Let's do it together.</h1>
-            <h2 class="preview__subtitle">We travel the world in search of stories. Come along for the ride.</h2>
-            <button type="button" class="preview__button">View Latest Posts</button>
+            <h1 class="preview-heading__title">Let's do it together.</h1>
+            <h2 class="preview-heading__subtitle">We travel the world in search of stories. Come along for the ride.</h2>
+            <button type="button" class="preview-heading__button">View Latest Posts</button>
         </div>
     </div>
 </header>
@@ -125,25 +136,29 @@ $recent_posts = [
 </nav>
 
 <div class="featured-content">
-    <h3 class="content__title">Featured Posts</h3>
+    <h3 class="featured-content__title">Featured Posts</h3>
     <hr class="featured-content__line">
     <div class="featured-content__content">
         <?php
-        foreach ($featured_posts as $post) {
-            include 'featured_post_preview.php';
+        foreach ($posts as $post) {
+            if ($post['featured'] == 1) {
+                include 'featured_post_preview.php';
+            }
         }
         ?>
     </div>
 </div>
 
 <div class="recent-content">
-    <h3 class="content__title">Most Recent</h3>
-    <hr class="featured-content__line">
+    <h3 class="recent-content__title">Most Recent</h3>
+    <hr class="recent-content__line">
 
     <div class="recent-content__content">
         <?php
-        foreach ($recent_posts as $post) {
-            include 'recent_post_preview.php';
+        foreach ($posts as $post) {
+            if ($post['featured'] == 0) {
+                include 'recent_post_preview.php';
+            }
         }
         ?>
     </div>

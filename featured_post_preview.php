@@ -1,5 +1,5 @@
 <a class="featured-content-block link" title="<?= $post['title']?>" href="/post?id=<?= $post['id'] ?>"
-   style="background-image: url('<?= $post["preview"]?>');
+   style="background-image: url('<?= $post["image_url"]?>');
                 background-size: cover;">
     <?php if ($post['type'] != ''): ?>
         <p class="featured-content__type"><?= $post['type'] ?></p>
@@ -9,8 +9,8 @@
         <p class="featured-content__block-subtitle"><?= $post['subtitle'] ?></p>
     </div>
     <div class="featured-content__block-info">
-        <img class="author-img" src="<?= $post['author_icon']?>" alt="<?= $post['author'] ?>" >
+        <img class="featured-content__author-img author-img" src="<?= $post['author_url']?>" alt="<?= $post['author'] ?>" >
         <span class="featured-content__author-name"><?= $post['author'] ?></span>
-        <span class="featured-content__block-date"><?= date('F d, Y', $post['date'])?></span>
+        <span class="featured-content__block-date"><?= date('F d, Y', strtotime($post['publish_date']))?></span>
     </div>
 </a>

@@ -1,7 +1,11 @@
 <?php
-$postId = $_GET['id'];
+if (in_array('id', array_keys($_GET))) {
+    $postId = $_GET['id'];
+} else {
+    die("Отсутствует ID поста");
+}
 
-$postInfo = [
+/*$postInfo = [
     'id' => 1,
     'title' => 'The Road Ahead',
     'subtitle' => 'The road ahead might be paved - it might not be.',
@@ -41,19 +45,36 @@ $postInfo = [
         But under it all they were men, penetrating the land of desolation and mockery and silence, puny adventurers bent on colossal adventure, pitting themselves against the might of a world as remote and alien and pulseless as the abysses of space.',
     'author' => 'Mat Vogels',
     'date' => 1443182400,
-];
+];*/
+include 'DBconnection.php';
+
+function getPostFromDB(mysqli $connect): mysqli_result {
+    global $postId;
+    $sql_query = "SELECT * FROM post WHERE id={$postId}";
+    return $connect -> query($sql_query);
+}
+
+$connection = createDBConnection();
+
+if (getPostFromDB($connection) -> num_rows > 0) {
+    $post = getPostFromDB($connection) -> fetch_assoc();
+}
+else {
+    die("Неверный ID поста");
+}
+closeDBConnection($connection);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?= $postId ?></title>
+    <title><?= $post['title'] ?></title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
 
-    <link href="/static/styles/the_road_ahead_style.css" rel="stylesheet">
+    <link href="/static/styles/post.css" rel="stylesheet">
 </head>
 
 <body>
@@ -70,13 +91,13 @@ $postInfo = [
         </div>
     </header>
 
-    <h1 class="title"><?= $postInfo['title'] ?></h1>
-    <h2 class="subtitle"><?= $postInfo['subtitle'] ?></h2>
+    <h1 class="title"><?= $post['title'] ?></h1>
+    <h2 class="subtitle"><?= $post['subtitle'] ?></h2>
 
-    <img class="image" src="<?= $postInfo['postImage'] ?>" alt="<?= $postInfo['title'] ?>">
+    <img class="image" src="<?= $post['image_url'] ?>" alt="<?= $post['title'] ?>">
 
     <p class="mainText">
-        <?= $postInfo['postContent'] ?>
+        <?= $post['content'] ?>
     </p>
 
     <footer class="section-footer">
