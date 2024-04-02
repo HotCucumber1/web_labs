@@ -265,6 +265,11 @@ body {
     color: black;
 }
 
+.recent-content__block-image {
+    width: 296px;
+    height: 150px;
+}
+
 .recent-content__block-heading {
     margin-top: 14px;
     margin-left: 13px;
