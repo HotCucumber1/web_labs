@@ -1,6 +1,6 @@
 <?php
-require_once 'db_connection.php';
-require 'db_interaction.php';
+require_once './data/db/db_connection.php';
+require './data/db/db_interaction.php';
 
 
 $connection = createDBConnection();
@@ -59,7 +59,7 @@ closeDBConnection($connection);
         <?php
         foreach ($posts as $post) {
             if ($post['featured'] == 1) {
-                include 'featured_post_preview.php';
+                include './samples/featured_post_preview.php';
             }
         }
         ?>
@@ -74,7 +74,7 @@ closeDBConnection($connection);
         <?php
         foreach ($posts as $post) {
             if ($post['featured'] == 0) {
-                include 'recent_post_preview.php';
+                include './samples/recent_post_preview.php';
             }
         }
         ?>

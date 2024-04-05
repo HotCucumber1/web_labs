@@ -1,6 +1,6 @@
 <?php
-require_once 'db_connection.php';
-require 'db_interaction.php';
+require_once './data/db/db_connection.php';
+require './data/db/db_interaction.php';
 
 
 function getId(): ?string
