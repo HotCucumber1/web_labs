@@ -298,7 +298,6 @@ body {
 .recent-content__block-info {
     background-color: #FCFCFC;
     display: flex;
-    margin-left: 13px;
     height: 48px
 }
 
@@ -306,6 +305,7 @@ body {
     max-width: 26px;
     max-height: 26px;
     margin-top: 12px;
+    margin-left: 13px;
 }
 
 .recent-content__author-name {

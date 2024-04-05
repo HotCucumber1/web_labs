@@ -1,26 +1,31 @@
 <?php
-if (in_array('id', array_keys($_GET))) {
-    $postId = $_GET['id'];
-} else {
-    echo "Отсутствует ID поста";
-    /*header("Location: https://localhost:443/home");*/
-}
+require_once 'db_connection.php';
+require 'db_interaction.php';
 
-include 'DBconnection.php';
 
-function getPostFromDB(mysqli $connect): mysqli_result {
-    global $postId;
-    $sql_query = "SELECT * FROM post WHERE id={$postId}";
-    return $connect -> query($sql_query);
+function getId(): ?string
+{
+    if (in_array('id', array_keys($_GET)) and is_numeric($_GET['id']))
+    {
+         return htmlentities($_GET['id']);
+    }
+    else
+    {
+        die("Неверный ID поста");
+        // header("Location: https://localhost:443/home");
+    }
 }
 
 
 $connection = createDBConnection();
-if (getPostFromDB($connection) -> num_rows > 0) {
-    $post = getPostFromDB($connection) -> fetch_assoc();
+$postId = getId();
+$dbPost = getPostFromDB($connection, $postId);
+if ($dbPost->num_rows > 0) {
+    $post = $dbPost->fetch_assoc();
 }
-else {
-    echo "Неверный ID поста";
+else
+{
+    die("Неверный ID поста");
 }
 closeDBConnection($connection);
 ?>

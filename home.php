@@ -1,11 +1,7 @@
 <?php
+require_once 'db_connection.php';
+require 'db_interaction.php';
 
-include 'DBconnection.php';
-
-function getPostsFromDB(mysqli $connect): mysqli_result {
-    $sql_query = "SELECT * FROM post";
-    return $connect -> query($sql_query);
-}
 
 $connection = createDBConnection();
 $posts = getPostsFromDB($connection);

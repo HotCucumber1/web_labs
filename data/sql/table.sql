@@ -9,4 +9,6 @@ CREATE TABLE post(
     image_url VARCHAR(255),
     featured TINYINT(1) DEFAULT(0),
     type VARCHAR(50)
-);
+);// обязательные поля - not null
+  // дата - default now()
+  //
