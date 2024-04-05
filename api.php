@@ -48,7 +48,10 @@ function protectedData(array $data): array
 {
     foreach ($data as $key => $value)
     {
-        $data[$key] = htmlentities($value);
+        if ($key != 'content')
+        {
+            $data[$key] = htmlentities($value);
+        }
     }
     return $data;
 }
