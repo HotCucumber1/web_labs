@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/admin_style.css">
+    <title>Admin</title>
+</head>
+<body>
+    <header class="section-header">
+        <img class="section-header__logo" src="static/images/logo/admin_logo.svg" alt="Escape.admin">
+        <div class="section-header-menu">
+            <img class="section-header__user-icon" src="static/images/avatars/N_user.png" alt="User">
+            <img class="section-header__exit-icon" src="static/images/icons/log_out.png" alt="Exit">
+        </div>
+    </header>
+
+    <div class="heading">
+        <h1 class="heading__title">New Post</h1>
+        <h2 class="heading__subtitle">Fill out the form bellow and publish your article</h2>
+        <button class="heading__publish-button">Publish</button>
+    </div>
+
+    <div class="main-info">
+        <h3 class="main-info__title">Main Information</h3>
+        <div class="main-info-title-input">
+            <label class="main-info-title-input__label" for="title">Title</label>
+            <input class="main-info-title-input__input-field" type="text" id="title">
+        </div>
+        
+        <div class="main-info-description-input">
+            <label class="main-info-description-input__label" for="description">Short description</label>
+            <input class="main-info-description-input__input-field" type="text" id="description">
+        </div>
+        
+        <div class="main-info-author-input">
+            <label class="main-info-author-input__label" for="author">Author name</label>
+            <input class="main-info-author-input__input-field" type="text" id="author">
+        </div>
+        
+        <div class="main-info-author-img-input">
+            <label class="main-info-author-img-input__label" for="author-img">Author photo</label>
+            <input class="main-info-author-img-input__input-field" type="file" id="author-img" alt="Upload image">
+            <span>Upload</span>
+        </div>
+        
+        <div class="main-info-date-input">
+            <label class="main-info-date-input__label" for="date">Publish date</label>
+            <input class="main-info-date-input__input-field" type="date" id="date">
+        </div>
+        
+        <div class="main-info-hero-img-input">
+            <label class="main-info-hero-img-input__label" for="hero-img">Hero image</label>
+            <input class="main-info-hero-img-input__input-field" type="file" id="hero-img" alt="Hero image">
+            <span>Size up to 10mb. Format: png, jpeg, gif.</span>
+        </div>
+        
+        <div class="main-info-hero-preview-img-input">
+            <label class="main-info-hero-preview-img-input__label" for="hero-img-preview">Hero image</label>
+            <input class="main-info-hero-preview-img-input__input-field" type="file" id="hero-img-preview" alt="Hero image preview">
+            <span>Size up to 5mb. Format: png, jpeg, gif.</span>
+        </div>
+        
+        <div class="main-info__article-preview">
+            <img class="main-info__article-preview-border" src="" alt="Article preview">
+            <!-- Передавать данные из полей ввода -->
+            <span>New post</span>
+            <span>Please, enter any description</span>
+        </div>
+        
+        <div class="main-info__post-card-preview">
+            <img class="main-info__post-card-preview-border" src="" alt="Article preview">
+            <!-- Передавать данные из полей ввода -->
+            <img class="main-info__post-card-preview-image" src="" alt="">
+            <div class="main-info__post-card-preview-heading">
+                <span class="main-info__post-card-preview-heading-title">New Post</span>
+                <span class="main-info__post-card-preview-heading-subtitle">Please, enter any description</span>
+            </div>
+            <hr class="main-info__post-card-preview-line">
+            <div class="main-info__post-card-preview-info">
+                <img class="main-info__post-card-preview-info-author-img" src="" alt="">
+                <span class="main-info__post-card-preview-info-author-name">Enter author name</span>
+                <span class="main-info__post-card-preview-info-date">4/19/2023</span>
+            </div>
+        </div>
+        
+        <div class="">
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <h3 class="content-block__title">Content</h3>
+        <label class="content-block__label" for="post-content">Post content (plain text)</label>
+        <input class="content-block__input-field" type="text" id="post-content">
+    </div>
+
+</body>
+</html>

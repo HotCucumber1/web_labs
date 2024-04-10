@@ -47,7 +47,7 @@ VALUES (
          This gave them the seeming of ghostly masques, undertakers in a spectral world at the funeral of some ghost.
          But under it all they were men, penetrating the land of desolation and mockery and silence, puny adventurers bent on colossal adventure, pitting themselves against the might of a world as remote and alien and pulseless as the abysses of space.',
         'Mat Vogels',
-        './static/images/main_page_images/authors/mat_vogels.png',
+        './static/images/avatars/mat_vogels.png',
         '20150925',
         './static/images/img1.jpg',
         1,
@@ -72,7 +72,7 @@ VALUES ('From Top Down',
          Perhaps such a journey will be the beginning of a new chapter in your life. You will be able to meet interesting people, taste unusual food and learn more about the culture of other countries. In addition, it is a great way to take a break from the daily routine and recharge your batteries for the next year.
          Therefore, once a year, leave your comfort zone and explore something new. You may find yourself in the most amazing place.',
         'William Wong',
-        './static/images/main_page_images/authors/william_wong.png',
+        './static/images/avatars/william_wong.png',
         '20150925',
         './static/images/main_page_images/preview/from_top_down_preview.jpg',
         1,
@@ -99,7 +99,7 @@ VALUES (
         Every time we do something new or unknown, we expand our comfort zone. It can be something small, like a new dish or playing sports, or something big, like moving to another city or country. The main thing is the willingness to go beyond the usual and open up to new opportunities.
         So don''t be afraid to step outside your comfort zone. Life begins where your convenience and safety ends. It is there that you will find real growth, development and joy.',
         'William Wong',
-        './static/images/main_page_images/authors/william_wong.png',
+        './static/images/avatars/william_wong.png',
         '20150925',
         './static/images/main_page_images/preview/still_standing_tall.jpg',
         0,
@@ -125,7 +125,7 @@ VALUES (
         It is also worth considering that people often exaggerate or simply forget the good points. It''s always easier to remember a negative experience than a positive one.
         Therefore, you should not be afraid to travel or visit new places just because someone said something bad about them. It is better to make sure of everything yourself and make up your mind. Who knows, maybe this particular place will become your favorite?',
         'Mat Vogels',
-        './static/images/main_page_images/authors/mat_vogels.png',
+        './static/images/avatars/mat_vogels.png',
         '20150925',
         './static/images/main_page_images/preview/sunny_side_up.jpg',
         0,
@@ -152,7 +152,7 @@ VALUES (
         Besides, traveling helps us to understand ourselves better. They allow us to step out of our comfort zone, face new challenges and overcome them. This makes us stronger, more confident and more adapted to the difficulties of life.
         So do not consider traveling as an escape from reality. On the contrary, they help us stay in touch with life, enjoy its beauty and diversity.',
         'Mat Vogels',
-        './static/images/main_page_images/authors/mat_vogels.png',
+        './static/images/avatars/mat_vogels.png',
         '20150925',
         './static/images/main_page_images/preview/water_falls.jpg',
         0,
@@ -179,7 +179,7 @@ VALUES (
         Travel also helps us to become more open and tolerant of differences between people. We are beginning to realize that we are all part of one big community that unites us despite all the differences.
         So if you want to see the wider world and feel like a part of something bigger, be sure to go on a trip!',
         'William Wong',
-        './static/images/main_page_images/authors/william_wong.png',
+        './static/images/avatars/william_wong.png',
         '20150925',
         './static/images/main_page_images/preview/through_the_mist.jpg',
         0,
@@ -204,7 +204,7 @@ VALUES (
         Wandering can lead to discoveries and new opportunities that we might otherwise miss. It allows us to see things from a different perspective and expand our understanding of the world.
         So don''t be afraid to wander and explore. Even if you don''t know exactly where you''re going, the journey itself can be a reward. Remember that not all those who wander are lost - some of us are just looking for something new and exciting.',
         'Mat Vogels',
-        './static/images/main_page_images/authors/mat_vogels.png',
+        './static/images/avatars/mat_vogels.png',
         '20150925',
         './static/images/main_page_images/preview/awaken_early.jpg',
         0,
@@ -229,7 +229,7 @@ VALUES (
         Traveling helps us to see the world in all its versatility and beauty. They allow us to better understand other people, their traditions and customs. Travel teaches us to be open, tolerant and ready for new adventures.
         So don''t be afraid to go beyond the usual. Embark on a journey and let it become your personal discovery of the world. Who knows what pages of this book are waiting for you ahead?',
         'Mat Vogels',
-        './static/images/main_page_images/authors/mat_vogels.png',
+        './static/images/avatars/mat_vogels.png',
         '20150925',
         './static/images/main_page_images/preview/try_it_always.jpg',
         0,
