@@ -1,5 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #F7F7F7;
+}
+
+h3 {
     margin: 0;
     padding: 0;
 }
@@ -8,6 +17,7 @@ body {
     display: flex;
     background-color: #2E2E2E;
     color: white;
+    margin-bottom: 65px;
 }
 
 .section-header__logo {
@@ -16,23 +26,25 @@ body {
 }
 
 .section-header__user-icon {
-    margin-block: 25px;
-    border-radius: 50%;
+    margin-block: 21px;
     margin-right: 16px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .section-header__exit-icon {
-    margin-block: 28px;
-
+    margin-block: 17px;
+    cursor: pointer;
 }
 
 .section-header-menu {
-    margin-left: auto;
-    margin-right: 140px;
+    margin-inline: auto 140px;
 }
 
 .heading {
+    display: flex;
     margin-inline: 130px;
+    margin-bottom: 32px;
 }
 
 .heading__title {
@@ -40,6 +52,7 @@ body {
     font-weight: 400;
     font-size: 34px;
     line-height: 40px;
+    margin-bottom: 8px;
 }
 
 .heading__subtitle {
@@ -53,6 +66,8 @@ body {
 
 .heading__publish-button {
     padding: 12px 24px;
+    margin-block: auto;
+    margin-inline: auto 0;
     font-family: "Oxygen", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -61,14 +76,166 @@ body {
     border: none;
     color: white;
     border-radius: 3px;
+    cursor: pointer;
+}
+
+.info-area {
+    background-color: white;
+    margin-inline: 130px;
+    padding: 40px 40px 56px;
+    border-radius: 3px;
+    box-shadow: 0 6px 12px -10px #00000033;
 }
 
 .main-info {
-    background-color: white;
-    margin-inline: 130px;
+    margin-bottom: 16px;
+    display: flex;
+}
+
+.main-info-enter__title {
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 30px;
+    margin-bottom: 40px;
+}
+
+.main-info-enter-author-img-input__label {
+    display: flex;
+}
+
+.main-info-enter-author-img-input__label-img {
+    margin-right: 16px;
+}
+
+.input-block {
+    margin-bottom: 40px;
+}
+
+.input-label {
+    display: block;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #7A7A7A;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    background-color: #F7F7F7;
+    border-top: none;
+    border-inline: none;
+    border-bottom-width: 1px;
+    border-color: #2E2E2E;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 4px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 560px;
+}
+
+.main-info-enter-author-input__input-field {
+    border-top: none;
+    border-inline: none;
+    border-bottom-width: 1px;
+    border-color: #EAEAEA;
+    line-height: 38px;
+    width: 560px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.main-info-enter-author-img-input__label-name {
+    margin-bottom: 10px;
+}
+
+.main-info-enter-author-img-input__label-sign {
+    display: inline-flex;
+    align-items: center;
+}
+
+.input-hidden {
+    display: none;
+}
+
+.label-image {
+    cursor: pointer;
+}
+
+.hero-image {
+    margin-bottom: 12px;
+}
+
+.size-pointer {
+    color: #999999;
+}
+
+.main-info-preview__article-preview {
+    background-image: url("../images/icons/article_preview.svg");
+    padding-top: 91px;
+    padding-inline: 17px;
+}
+
+.main-info-preview__article-preview-heading {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.main-info-preview__article-title {
+    display: block;
+    line-height: 24px;
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.main-info-preview__article-subtitle {
+    line-height: 12px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: #2E2E2E;
+    opacity: 63%;
+}
+
+.main-info-preview__article-preview-image {
 }
 
 .content-block {
-    background-color: white;
-    margin-inline: 130px;
+    margin-bottom: 338px;
+}
+
+.content-block__title {
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 30px;
+    margin-bottom: 40px;
+}
+
+.content-block__input-field {
+    height: 160px;
+    width: 940px;
+    border-width: 1px;
+    border-color: #EAEAEA;
+    border-radius: 5px;
+    padding: 8px;
+    line-height: 24px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.content-block__input-field::placeholder {
+    line-height: 24px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #999999;
 }

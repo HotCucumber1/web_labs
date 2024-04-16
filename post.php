@@ -46,7 +46,7 @@ closeDBConnection($connection);
 <body>
     <header class="section-header">
         <div class="section-header__nav-panel">
-            <a href="/home"><img class="section-header__logo" src="/static/images/header_logo.svg" alt="Escape."></a>
+            <a href="/home"><img class="section-header__logo" src="/static/images/logo/header_logo.svg" alt="Escape."></a>
 
             <nav class="section-header__links">
                 <a class="section-header__link" href="/home">HOME</a>
@@ -68,7 +68,7 @@ closeDBConnection($connection);
 
     <footer class="section-footer">
         <div class="section-footer__nav-panel">
-            <img class="section-footer__logo" src="/static/images/footer_logo.svg" alt="Escape.">
+            <img class="section-footer__logo" src="/static/images/logo/footer_logo.svg" alt="Escape.">
 
             <nav class="section-footer__links">
                 <a class="section-footer__link" href="/home">HOME</a>
