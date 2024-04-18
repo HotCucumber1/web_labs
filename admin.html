@@ -11,9 +11,9 @@
 <body>
     <header class="section-header">
         <div class="section-header__content">
-            <img class="section-header__logo" src="static/images/logo/admin_logo.svg" alt="Escape.admin">
+            <img class="section-header__logo" src="/static/images/logo/admin_logo.svg" alt="Escape.admin">
             <div class="section-header-menu">
-                <a href=""><img class="section-header__user-icon" src="static/images/avatars/N_user.png" alt="User"></a>
+                <a href=""><img class="section-header__user-icon avatar" src="static/images/avatars/N_user.png" alt="User"></a>
                 <a href="/home"><img class="section-header__exit-icon" src="static/images/icons/log_out.svg" alt="Exit"></a>
             </div>
         </div>
@@ -26,85 +26,101 @@
         </div>
         <button class="heading__publish-button" form="main-form" id="publish-button" type="button">Publish</button>
     </div>
-
+    
+    
     <div class="main-info info-area">
-        <form class="main-info-enter" id="main-form">
-            <h3 class="main-info-enter__title">Main Information</h3>
-            <div class="main-info-enter-title-input input-block">
-                <label class="main-info-enter-title-input__label input-label" for="title">Title</label>
-                <input class="main-info-enter-title-input__input-field input-field" type="text" id="title">
-            </div>
-            
-            <div class="main-info-enter-description-input input-block">
-                <label class="main-info-enter-description-input__label input-label" for="description">Short description</label>
-                <input class="main-info-enter-description-input__input-field input-field" type="text" id="description">
-            </div>
-            
-            <div class="main-info-enter-author-input input-block">
-                <label class="main-info-enter-author-input__label input-label" for="author">Author name</label>
-                <input class="main-info-enter-author-input__input-field" type="text" id="author">
-            </div>
-            
-            <div class="main-info-enter-author-img-input input-block">
-                <span class="main-info-enter-author-img-input__label-name input-label">Author Photo</span>
-                <label class="main-info-enter-author-img-input__label label-image" for="author-img">
-                    <img class="main-info-enter-author-img-input__label-img" src="/static/images/icons/default_avatar_icon.svg" alt="Upload image">
-                    <span class="main-info-enter-author-img-input__label-sign">Upload</span>
-                </label>
-                <input class="main-info-enter-author-img-input__input-field input-hidden" type="file" id="author-img" accept="image/*">
-            </div>
-            
-            <div class="main-info-enter-date-input input-block">
-                <label class="main-info-enter-date-input__label input-label" for="date">Publish date</label>
-                <input class="main-info-enter-date-input__input-field input-field" type="date" id="date">
-            </div>
-            
-            <div class="main-info-enter-hero-img-input input-block">
-                <span class="main-info-enter-hero-img-input__label-name input-label">Hero image</span>
-                <label class="main-info-enter-hero-img-input__label label-image" for="hero-img">
-                    <img class="main-info-enter-hero-img-input__label-img hero-image" src="/static/images/icons/hero_image_default_icon.svg" alt="Upload image">
-                </label>
-                <input class="main-info-enter-hero-img-input__input-field input-hidden" type="file" id="hero-img" accept="image/*">
-                <span class="main-info-enter-hero-img-input__size-pointer size-pointer input-label">Size up to 10mb. Format: png, jpeg, gif.</span>
-            </div>
-            
-            <div class="main-info-enter-hero-preview-img-input input-block">
-                <span class="main-info-enter-hero-preview-img-input__label-name input-label">Hero image</span>
-                <label class="main-info-enter-hero-preview-img-input__label label-image" for="hero-img-preview">
-                    <img class="main-info-enter-hero-preview-img-input__label-img hero-image" src="/static/images/icons/hero_image_preview_default_icon.svg" alt="Upload image">
-                </label>
-                <input class="main-info-enter-hero-preview-img-input__input-field input-hidden" type="file" id="hero-img-preview" accept="image/*">
-                <span class="main-info-enter-hero-preview-img-input__size-pointer size-pointer input-label">Size up to 5mb. Format: png, jpeg, gif.</span>
-            </div>
-        </form>
-        
-        <div class="main-info-preview">
-            <span class="main-info-preview__article-label input-label">Article preview</span>
-            <div class="main-info-preview-article-preview">
-                <!-- Передавать данные из полей ввода -->
-                <div class="main-info-preview-article-preview__heading">
-                    <span class="main-info-preview-article-preview__title">New post</span>
-                    <span class="main-info-preview-article-preview__subtitle">Please, enter any description</span>
-                </div>
-                <img class="main-info-preview-article-preview__image" src="/static/images/icons/article_preview_default_img.svg" alt="Article preview">
-            </div>
-            
-            <div class="main-info-preview__post-card-preview">
-                <span class="main-info-preview__post-card-label input-label">Post card preview</span>
-                <div class="main-info-preview-post-card-preview">
-                    <div class="main-info-preview-post-card-preview__card">
-                        <img class="main-info-preview-post-card-preview__image" src="/static/images/icons/post_card_preview_default_img.svg" alt="Post card preview">
-                        <div class="main-info-preview-post-card-preview__heading">
-                            <span class="main-info-preview-post-card-preview__title">New Post</span>
-                            <span class="main-info-preview-post-card-preview__subtitle">Please, enter any description</span>
-                        </div>
-                        <div class="main-info-preview-post-card-preview__info">
-                            <img class="main-info-preview-post-card-preview__author-img" src="/static/images/avatars/default.png" alt="Author">
-                            <span class="main-info-preview-post-card-preview__author-name">Enter author name</span>
-                            <span class="main-info-preview-post-card-preview__date">4/19/2023</span>
-                        </div>
-                    </div>
+        <h3 class="main-info__title">Main Information</h3>
+        <div class="main-info__main-information">
+            <form class="main-info-enter" id="main-form">
+                <div class="main-info-enter-title-input input-block">
+                    <label class="main-info-enter-title-input__label input-label" for="title">Title</label>
+                    <input class="main-info-enter-title-input__input-field input-field" type="text" id="title"
+                    oninput="displayText(this, [document.getElementById('article-title'),
+                                                document.getElementById('post-card-title')])">
                     
+                    <!--<span class="main-info-enter-title-input__error error-help">Title is required</span>-->
+                </div>
+                
+                <div class="main-info-enter-description-input input-block">
+                    <label class="main-info-enter-description-input__label input-label" for="description">Short description</label>
+                    <input class="main-info-enter-description-input__input-field input-field" type="text" id="description"
+                           oninput="displayText(this, [document.getElementById('article-subtitle'),
+                                                       document.getElementById('post-card-subtitle')])">
+                </div>
+                
+                <div class="main-info-enter-author-input input-block">
+                    <label class="main-info-enter-author-input__label input-label" for="author">Author name</label>
+                    <input class="main-info-enter-author-input__input-field" type="text" id="author"
+                           oninput="displayText(this, [document.getElementById('post-card-author-name')])">
+                </div>
+                
+                <div class="main-info-enter-author-img-input input-block">
+                    <span class="main-info-enter-author-img-input__label-name input-label">Author Photo</span>
+                    <label class="main-info-enter-author-img-input__label label-image" for="author-img">
+                        <img class="main-info-enter-author-img-input__label-img avatar" src="/static/images/icons/default_avatar_icon.svg" alt="Upload image">
+                        <span class="main-info-enter-author-img-input__label-sign">Upload</span>
+                    </label>
+                    <input class="main-info-enter-author-img-input__input-field input-hidden"
+                           type="file" id="author-img" accept="image/*"
+                           onchange="displayImage(this, document.getElementById('author-avatar'))">
+                </div>
+                
+                <div class="main-info-enter-date-input input-block">
+                    <label class="main-info-enter-date-input__label input-label" for="date">Publish date</label>
+                    <input class="main-info-enter-date-input__input-field input-field" type="date" id="date"
+                           oninput="displayText(this, [document.getElementById('post-card-date')])">
+                </div>
+                
+                <div class="main-info-enter-hero-img-input input-block">
+                    <span class="main-info-enter-hero-img-input__label-name input-label">Hero image</span>
+                    <label class="main-info-enter-hero-img-input__label label-image" for="hero-img">
+                        <img class="main-info-enter-hero-img-input__label-img hero-image" src="/static/images/icons/hero_image_default_icon.svg" alt="Upload image">
+                    </label>
+                    <input class="main-info-enter-hero-img-input__input-field input-hidden" type="file" id="hero-img" accept="image/*"
+                           onchange="displayImage(this, document.getElementById('article-preview-img'))">
+                    <span class="main-info-enter-hero-img-input__size-pointer size-pointer input-label">Size up to 10mb. Format: png, jpeg, gif.</span>
+                </div>
+                
+                <div class="main-info-enter-hero-preview-img-input input-block">
+                    <span class="main-info-enter-hero-preview-img-input__label-name input-label">Hero image</span>
+                    <label class="main-info-enter-hero-preview-img-input__label label-image" for="hero-img-preview">
+                        <img class="main-info-enter-hero-preview-img-input__label-img hero-image"
+                             src="/static/images/icons/hero_image_preview_default_icon.svg" alt="Upload image">
+                    </label>
+                    <input class="main-info-enter-hero-preview-img-input__input-field input-hidden" type="file" id="hero-img-preview" accept="image/*"
+                           onchange="displayImage(this, document.getElementById('post-card-img'))">
+                    <span class="main-info-enter-hero-preview-img-input__size-pointer size-pointer input-label">Size up to 5mb. Format: png, jpeg, gif.</span>
+                </div>
+            </form>
+            
+            <div class="main-info-preview">
+                <span class="main-info-preview__article-label input-label">Article preview</span>
+                <div class="main-info-preview-article-preview">
+                    <!-- Передавать данные из полей ввода -->
+                    <div class="main-info-preview-article-preview__heading">
+                        <span class="main-info-preview-article-preview__title" id="article-title">New post</span>
+                        <span class="main-info-preview-article-preview__subtitle" id="article-subtitle">Please, enter any description</span>
+                    </div>
+                    <img class="main-info-preview-article-preview__image" src="/static/images/icons/article_preview_default_img.svg" alt="Article preview" id="article-preview-img">
+                </div>
+                
+                <div class="main-info-preview__post-card-preview">
+                    <span class="main-info-preview__post-card-label input-label">Post card preview</span>
+                    <div class="main-info-preview-post-card-preview">
+                        <div class="main-info-preview-post-card-preview__card">
+                            <img class="main-info-preview-post-card-preview__image" src="/static/images/icons/post_card_preview_default_img.svg" alt="Post card preview" id="post-card-img">
+                            <div class="main-info-preview-post-card-preview__heading">
+                                <span class="main-info-preview-post-card-preview__title" id="post-card-title">New Post</span>
+                                <span class="main-info-preview-post-card-preview__subtitle" id="post-card-subtitle">Please, enter any description</span>
+                            </div>
+                            <div class="main-info-preview-post-card-preview__info">
+                                <img class="main-info-preview-post-card-preview__author-img avatar" src="/static/images/avatars/default.png" alt="Author" id="author-avatar">
+                                <span class="main-info-preview-post-card-preview__author-name" id="post-card-author-name">Enter author name</span>
+                                <span class="main-info-preview-post-card-preview__date" id="post-card-date">4/19/2023</span>
+                            </div>
+                        </div>
+                    
+                    </div>
                 </div>
             </div>
         </div>
