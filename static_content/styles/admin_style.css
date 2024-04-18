@@ -14,36 +14,39 @@ h3 {
 }
 
 .section-header {
-    display: flex;
     background-color: #2E2E2E;
     color: white;
     margin-bottom: 65px;
 }
 
+.section-header__content {
+    display: flex;
+    max-width: 1180px;
+    margin-inline: auto;
+}
+
 .section-header__logo {
     margin-block: 24px;
-    margin-left: 130px;
 }
 
 .section-header__user-icon {
     margin-block: 21px;
     margin-right: 16px;
     border-radius: 50%;
-    cursor: pointer;
 }
 
 .section-header__exit-icon {
     margin-block: 17px;
-    cursor: pointer;
 }
 
 .section-header-menu {
-    margin-inline: auto 140px;
+    margin-inline: auto 0;
 }
 
 .heading {
     display: flex;
-    margin-inline: 130px;
+    max-width: 1180px;
+    margin-inline: auto;
     margin-bottom: 32px;
 }
 
@@ -81,15 +84,21 @@ h3 {
 
 .info-area {
     background-color: white;
-    margin-inline: 130px;
     padding: 40px 40px 56px;
     border-radius: 3px;
     box-shadow: 0 6px 12px -10px #00000033;
+    max-width: 1180px;
+    margin-inline: auto;
 }
 
 .main-info {
     margin-bottom: 16px;
     display: flex;
+    justify-content: space-between;
+}
+
+.main-info-enter {
+    padding-right: 80px;
 }
 
 .main-info-enter__title {
@@ -148,6 +157,7 @@ h3 {
     font-family: "Oxygen", sans-serif;
     font-weight: 400;
     font-size: 16px;
+    padding: 8px 4px;
 }
 
 .main-info-enter-author-img-input__label-name {
@@ -175,27 +185,40 @@ h3 {
     color: #999999;
 }
 
-.main-info-preview__article-preview {
-    background-image: url("../images/icons/article_preview.svg");
-    padding-top: 91px;
-    padding-inline: 17px;
+.main-info-preview {
+    mask: linear-gradient(to left, transparent, white 30%);
 }
 
-.main-info-preview__article-preview-heading {
+.main-info-preview-article-preview {
+    background-image: url("../images/icons/article_preview.svg");
+    background-size: cover;
+    mask: linear-gradient(to top, transparent, white 20%);
+    padding-top: 91px;
+    width: 440px;
+    height: 385px;
+    margin-bottom: 20px;
+}
+
+.main-info-preview__article-label {
+    margin-bottom: 16px;
+}
+
+.main-info-preview-article-preview__heading {
     text-align: center;
     margin-bottom: 36px;
 }
 
-.main-info-preview__article-title {
+.main-info-preview-article-preview__title {
     display: block;
     line-height: 24px;
     font-family: "Lora", serif;
     font-weight: 400;
     font-size: 20px;
     margin-bottom: 4px;
+    
 }
 
-.main-info-preview__article-subtitle {
+.main-info-preview-article-preview__subtitle {
     line-height: 12px;
     font-family: "Oxygen", sans-serif;
     font-weight: 400;
@@ -204,7 +227,80 @@ h3 {
     opacity: 63%;
 }
 
-.main-info-preview__article-preview-image {
+.main-info-preview-article-preview__image {
+    margin-inline: 17px;
+}
+
+.main-info-preview__post-card-label {
+    margin-bottom: 16px;
+}
+
+.main-info-preview-post-card-preview {
+    width: 440px;
+    height: 360px;
+    border: 1px solid #D3D3D3;
+    border-radius: 10px;
+    mask: linear-gradient(to top, transparent, white 10%);
+    padding-top: 32px;
+    padding-left: 16px;
+}
+
+.main-info-preview-post-card-preview__card {
+    width: fit-content;
+    border: 1px solid #EAEAEA;
+}
+
+.main-info-preview-post-card-preview__image {
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.main-info-preview-post-card-preview__heading {
+    padding: 14px 13px 32px;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.main-info-preview-post-card-preview__title {
+    display: block;
+    font-family: "Lora", serif;
+    font-weight: 400;
+    line-height: 21px;
+    font-size: 16px;
+    color: #101315;
+    margin-bottom: 7px;
+}
+
+.main-info-preview-post-card-preview__subtitle {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    line-height: 19px;
+    font-size: 13px;
+    color: #7A7A7A;
+}
+
+.main-info-preview-post-card-preview__info {
+    display: flex;
+    padding: 12px 13px 10px;
+}
+
+.main-info-preview-post-card-preview__author-img {
+    margin-right: 10px;
+}
+
+.main-info-preview-post-card-preview__author-name {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    line-height: 35px;
+    font-size: 12px;
+    color: #999999;
+}
+
+.main-info-preview-post-card-preview__date {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    line-height: 35px;
+    font-size: 12px;
+    color: #999999;
+    margin-inline: auto 0;
 }
 
 .content-block {

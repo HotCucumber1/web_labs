@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/styles/admin_style.css">
+    <link rel="stylesheet" href="static/styles/admin_style.css">
     <title>Admin</title>
 </head>
+
 <body>
     <header class="section-header">
-        <img class="section-header__logo" src="static/images/logo/admin_logo.svg" alt="Escape.admin">
-        <div class="section-header-menu">
-            <img class="section-header__user-icon" src="static/images/avatars/N_user.png" alt="User">
-            <img class="section-header__exit-icon" src="static/images/icons/log_out.svg" alt="Exit">
+        <div class="section-header__content">
+            <img class="section-header__logo" src="static/images/logo/admin_logo.svg" alt="Escape.admin">
+            <div class="section-header-menu">
+                <a href=""><img class="section-header__user-icon" src="static/images/avatars/N_user.png" alt="User"></a>
+                <a href="/home"><img class="section-header__exit-icon" src="static/images/icons/log_out.svg" alt="Exit"></a>
+            </div>
         </div>
     </header>
 
@@ -21,7 +24,7 @@
             <h1 class="heading__title">New Post</h1>
             <h2 class="heading__subtitle">Fill out the form bellow and publish your article</h2>
         </div>
-        <button class="heading__publish-button" form="main-form">Publish</button>
+        <button class="heading__publish-button" form="main-form" id="publish-button" type="button">Publish</button>
     </div>
 
     <div class="main-info info-area">
@@ -77,29 +80,31 @@
         
         <div class="main-info-preview">
             <span class="main-info-preview__article-label input-label">Article preview</span>
-            <div class="main-info-preview__article-preview">
+            <div class="main-info-preview-article-preview">
                 <!-- Передавать данные из полей ввода -->
-                <div class="main-info-preview__article-preview-heading">
-                    <span class="main-info-preview__article-title">New post</span>
-                    <span class="main-info-preview__article-subtitle">Please, enter any description</span>
+                <div class="main-info-preview-article-preview__heading">
+                    <span class="main-info-preview-article-preview__title">New post</span>
+                    <span class="main-info-preview-article-preview__subtitle">Please, enter any description</span>
                 </div>
-                <img class="main-info-preview__article-preview-image" src="static/images/icons/article_preview_default_img.svg" alt="Article preview">
+                <img class="main-info-preview-article-preview__image" src="/static/images/icons/article_preview_default_img.svg" alt="Article preview">
             </div>
             
             <div class="main-info-preview__post-card-preview">
-                <span class="input-label">Post card preview</span>
-                <img class="main-info-preview__post-card-preview-border" src="" alt="Article preview">
-                <!-- Передавать данные из полей ввода -->
-                <img class="main-info-preview__post-card-preview-image" src="" alt="">
-                <div class="main-info-preview__post-card-preview-heading">
-                    <span class="main-info-preview__post-card-preview-heading-title">New Post</span>
-                    <span class="main-info-preview__post-card-preview-heading-subtitle">Please, enter any description</span>
-                </div>
-                <hr class="main-info-preview__post-card-preview-line">
-                <div class="main-info-preview__post-card-preview-info">
-                    <img class="main-info-preview__post-card-preview-info-author-img" src="" alt="">
-                    <span class="main-info-preview__post-card-preview-info-author-name">Enter author name</span>
-                    <span class="main-info-preview__post-card-preview-info-date">4/19/2023</span>
+                <span class="main-info-preview__post-card-label input-label">Post card preview</span>
+                <div class="main-info-preview-post-card-preview">
+                    <div class="main-info-preview-post-card-preview__card">
+                        <img class="main-info-preview-post-card-preview__image" src="/static/images/icons/post_card_preview_default_img.svg" alt="Post card preview">
+                        <div class="main-info-preview-post-card-preview__heading">
+                            <span class="main-info-preview-post-card-preview__title">New Post</span>
+                            <span class="main-info-preview-post-card-preview__subtitle">Please, enter any description</span>
+                        </div>
+                        <div class="main-info-preview-post-card-preview__info">
+                            <img class="main-info-preview-post-card-preview__author-img" src="/static/images/avatars/default.png" alt="Author">
+                            <span class="main-info-preview-post-card-preview__author-name">Enter author name</span>
+                            <span class="main-info-preview-post-card-preview__date">4/19/2023</span>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -110,6 +115,7 @@
         <label class="content-block__label input-label" for="post-content">Post content (plain text)</label>
         <textarea class="content-block__input-field" id="post-content" placeholder="Type anything you want ..."></textarea>
     </div>
-
+    
+    <script src="scripts/admin_script.js" type="application/javascript"></script>
 </body>
 </html>
