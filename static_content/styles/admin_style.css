@@ -8,11 +8,6 @@ body {
     background-color: #F7F7F7;
 }
 
-h3 {
-    margin: 0;
-    padding: 0;
-}
-
 .message {
     border-radius: 5px;
     display: flex;
@@ -181,6 +176,25 @@ h3 {
 }
 
 .input-field {
+    border-top: none;
+    border-inline: none;
+    border-bottom-width: 1px;
+    border-color: #EAEAEA;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    line-height: 24px;
+    width: 560px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 8px 4px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.input-field_active, .input-field:focus {
     background-color: #F7F7F7;
     border-top: none;
     border-inline: none;
@@ -194,19 +208,6 @@ h3 {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     width: 560px;
-}
-
-.main-info-enter-author-input__input-field {
-    border-top: none;
-    border-inline: none;
-    border-bottom-width: 1px;
-    border-color: #EAEAEA;
-    line-height: 38px;
-    width: 560px;
-    font-family: "Oxygen", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    padding: 8px 4px;
 }
 
 .main-info-enter-author-img-input__label-name {
@@ -382,8 +383,10 @@ h3 {
 }
 
 .content-block__input-field {
-    height: 160px;
-    width: 940px;
+    max-width: 940px;
+    min-width: 940px;
+    max-height: 160px;
+    min-height: 160px;
     border-width: 1px;
     border-color: #EAEAEA;
     border-radius: 5px;

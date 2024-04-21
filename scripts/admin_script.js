@@ -1,9 +1,22 @@
 let publish_button = document.getElementById('publish-button');
 
+let title = document.getElementById('title');
+let description = document.getElementById('description');
+let author = document.getElementById('author');
+let date = document.getElementById('date');
+
+let input_fields = [
+    document.getElementById('title'),
+    document.getElementById('description'),
+    document.getElementById('author'),
+    document.getElementById('date'),
+]
+
+
+const SPACE_NUM = 4;
 
 function convertToBase64(image)
 {
-
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = () => {
@@ -13,16 +26,14 @@ function convertToBase64(image)
     });
 }
 
-function checkImg(image) {
-    let base64;
-    if (image.files[0]) {
-        convertToBase64(image.files[0]).then(img => {
-            console.log(img);
-        })
+function checkImg(image)
+{
+    let base64 = "";
+    if (image.files[0])
+    {
+        base64 = convertToBase64(image.files[0]).then((img) => img);
     }
-    else {
-        base64 = "";
-    }
+    return base64;
 }
 
 function getData()
@@ -36,8 +47,9 @@ function getData()
     const heroImgPreview = document.getElementById('hero-img-preview');
     const content = document.getElementById('post-content');
 
+    console.log(checkImg(authorImg));
 
-    const data = {
+    return {
         'title': title.value,
         'description': description.value,
         'author': author.value,
@@ -46,17 +58,15 @@ function getData()
         'hero_img': checkImg(heroImg),
         'hero_img_preview': checkImg(heroImgPreview),
         'post_content': content.value,
-    }
-
-    return data;
-    /*const replacer = null;
-    const space = 4;
-    return JSON.stringify(data, replacer, space);*/
+    };
 }
 
-function isChecked(data) {
-    for (let key in data) {
-        if (data[key] === '') {
+function isChecked(data)
+{
+    for (let key in data)
+    {
+        if (data[key] === '')
+        {
             return false;
         }
     }
@@ -67,17 +77,20 @@ function pushData(event)
 {
     let data = getData();
     let status;
-    if (isChecked(data)) {
+    if (isChecked(data))
+    {
         status = 0;
-        console.log(data);
+        console.log(JSON.stringify(data, null, SPACE_NUM));
     }
-    else {
+    else
+    {
         status = 1;
     }
     createMessage(status);
 }
 
-function displayImage(inputElement, imageElement) {
+function displayImage(inputElement, imageElement)
+{
     const file = inputElement.files[0];
     const inputLabel = document.querySelector(`label[for="${inputElement.id}"]`);
     const imageURL = URL.createObjectURL(file);
@@ -86,29 +99,34 @@ function displayImage(inputElement, imageElement) {
     inputLabel.firstElementChild.src = imageURL;
 }
 
-function displayText(inputElement, textElements) {
-    for (let i = 0; i<textElements.length; i++) {
-        textElements[i].textContent = inputElement.value;
+function displayText(inputElement, textElements)
+{
+    for (let i = 0; i<textElements.length; i++)
+    {
+        if (inputElement.value !== "")
+            textElements[i].textContent = inputElement.value;
     }
 }
 
-function deleteLastMessage() {
-    if (document.querySelector('.success-message')) {
-        document.body.removeChild(document.querySelector('.success-message'));
-    }
-    if (document.querySelector('.error-message')) {
-        document.body.removeChild(document.querySelector('.error-message'));
+function deleteLastMessage()
+{
+    if (document.querySelector('.message'))
+    {
+        document.body.removeChild(document.querySelector('.message'));
     }
 }
 
-function createMessage(status) {
+function createMessage(status)
+{
     deleteLastMessage();
 
     const heading = document.querySelector('.heading');
     const div = document.createElement('div');
     const img = document.createElement('img');
     const span = document.createElement('span');
-    if (status === 0) {
+
+    if (status === 0)
+    {
         div.className = 'success-message message';
 
         img.className = "success-message__icon icon"
@@ -117,7 +135,9 @@ function createMessage(status) {
 
         span.className = "success-message__status status";
         span.innerText = 'Publish Complete!';
-    } else {
+    }
+    else
+    {
         div.className = 'error-message message';
 
         img.className = "error-message__icon icon"
@@ -133,14 +153,25 @@ function createMessage(status) {
     heading.after(div);
 }
 
-function deleteLastErrorHelp() {
-    if (document.querySelector('.error-help')) {
+function deleteLastErrorHelp()
+{
+    if (document.querySelector('.error-help'))
+    {
         document.querySelector('.error-help').remove();
     }
 }
 
+function changeStyles(element)
+{
+    if (element.value === "")
+        element.className = "input-field";
+    else
+        element.className = "input-field_active"
+}
+
 // разобраться
-function createErrorHelp(last) {
+function createErrorHelp(last)
+{
     deleteLastErrorHelp();
 
     const span = document.createElement('span');
@@ -152,7 +183,11 @@ function createErrorHelp(last) {
 
 function initEventsListeners()
 {
-    publish_button.addEventListener('click', pushData)
+    publish_button.addEventListener('click', pushData);
+    for (let element of input_fields)
+    {
+        element.addEventListener('input', function (event){ changeStyles(element) });
+    }
 }
 
 
