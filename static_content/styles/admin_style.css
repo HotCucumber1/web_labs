@@ -6,6 +6,8 @@
 
 body {
     background-color: #F7F7F7;
+    min-width: fit-content;
+    overflow-x: hidden;
 }
 
 .message {
@@ -56,22 +58,36 @@ body {
     margin-block: 24px;
 }
 
-.section-header__user-icon {
-    margin-block: 21px;
+.section-header__user-icon-link {
+    text-decoration: none;
+    margin-block: 23px;
     margin-right: 16px;
+}
 
+.section-header__user-icon {
+    display: table-cell;
+    background-color: #DD783F;
+    color: white;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .avatar {
     border-radius: 50%;
+    width: 32px;
+    height: 32px;
 }
 
-.section-header__exit-icon {
-    margin-block: 17px;
+.section-header__exit-icon-link {
+    margin-block: 19px;
 }
 
 .section-header-menu {
     margin-inline: auto 0;
+    display: flex;
 }
 
 .heading {
@@ -277,6 +293,7 @@ input:focus {
     font-weight: 400;
     font-size: 20px;
     margin-bottom: 4px;
+    padding-inline: 24px;
 }
 
 .main-info-preview-article-preview__subtitle {
@@ -395,6 +412,10 @@ input:focus {
     font-family: "Oxygen", sans-serif;
     font-weight: 400;
     font-size: 16px;
+}
+
+.content-block__input-field:focus {
+    outline: none;
 }
 
 .content-block__input-field::placeholder {

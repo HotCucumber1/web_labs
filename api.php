@@ -3,6 +3,7 @@ require_once './data/db/db_connection.php';
 require './data/db/db_interaction.php';
 
 
+// посмотреть, что приходит
 function saveFile(string $file, string $data): void {
     $myFile = fopen($file, 'w');
     if (!$myFile) {
@@ -15,26 +16,18 @@ function saveFile(string $file, string $data): void {
         return;
     }
     fclose($myFile);
-    echo "Данные успешно сохранены" . "<br>";
-}
-
-
-function saveImage(string $image, string $fileName): void {
-    $imageArray = explode(';base64,', $image);
-    $imageExtension = str_replace('data:image/', '',  $imageArray[0]);
-    $imageDecode = base64_decode($imageArray[1]);
-    saveFile("./static_content/images/main_page_images/preview/{$fileName}.$imageExtension", $imageDecode);
 }
 
 
 function isCorrect(array $data): bool
 {
     if (is_string($data['title']) and strlen($data['title']) <= MAX_STR_LEN and
-        is_string($data['subtitle']) and strlen($data['subtitle']) <= MAX_STR_LEN and
+        is_string($data['description']) and strlen($data['description']) <= MAX_STR_LEN and
         is_string($data['author']) and strlen($data['author']) <= MAX_STR_LEN and
-        is_string($data['author_url']) and strlen($data['author_url']) <= MAX_STR_LEN and
-        is_string($data['publish_date']) and
-        is_string($data['image_url']) and
+        is_string($data['author_img']) and
+        is_string($data['date']) and
+        is_string($data['hero_img']) and
+        is_string($data['hero_img_preview']) and
         is_int($data['featured']) and
         is_string($data['type']) and strlen($data['type']) <= TYPE_LEN)
     {
@@ -48,7 +41,7 @@ function protectedData(array $data): array
 {
     foreach ($data as $key => $value)
     {
-        if ($key != 'content')
+        if ($key != 'post_content')
         {
             $data[$key] = htmlentities($value);
         }
@@ -56,33 +49,76 @@ function protectedData(array $data): array
     return $data;
 }
 
-
-$connection = createDBConnection();
-$method = $_SERVER['REQUEST_METHOD'];
-echo $method . "<br>";
-
-if ($method === 'POST')
+function setDefaultItems($data): array
 {
+    if (!$data['featured'])
+        $data['featured'] = 0;
+    if (!$data['type'])
+        $data['type'] = '';
+    return $data;
+}
+
+function saveImage(string $image, string $fileName, string $dir): string
+{
+    $imageArray = explode(';base64,', $image);
+    $imageExtension = str_replace('data:image/', '',  $imageArray[0]);
+    $imageDecode = base64_decode($imageArray[1]);
+    saveFile("./static_content/images/{$dir}/{$fileName}.{$imageExtension}", $imageDecode);
+    return $imageExtension;
+}
+
+function setSavedImagesData($data): array
+{
+    $authorFileName = mb_strtolower(str_replace(' ', '_', rtrim($data['author'], '.')));
+    $mainImageFileName = mb_strtolower(str_replace(' ', '_', rtrim($data['title'], '.')));
+    $previewFileName = mb_strtolower(str_replace(' ', '_', rtrim($data['title'], '.'))) . "_preview";
+
+    $authorExt = saveImage($data['author_img'], $authorFileName, 'avatars');
+    $mainImgExt = saveImage($data['hero_img'], $mainImageFileName, 'main_image');
+    $previewExt = saveImage($data['hero_img_preview'], $previewFileName, 'preview');
+
+    $data['author_img'] = "/static/images/avatars/{$authorFileName}.{$authorExt}";
+    $data['hero_img'] = "/static/images/main_image/{$mainImageFileName}.{$mainImgExt}";
+    $data['hero_img_preview'] = "/static/images/preview/{$previewFileName}.{$previewExt}";
+
+    return $data;
+}
+
+
+try {
+    $method = $_SERVER['REQUEST_METHOD'];
     $jsonData = file_get_contents("php://input");
-    $arrayData = json_decode($jsonData, associative: true);
 
-    if (isCorrect($arrayData))
+    if ($method === 'POST')
     {
-        $arrayData = protectedData($arrayData);
-        $fileName = mb_strtolower(str_replace(' ', '_', rtrim($arrayData['title'], '.')));
-        saveImage($arrayData['image_url'], $fileName);
+        $connection = createDBConnection();
 
-        $arrayData['image_url'] = "./static/images/main_page_images/preview/{$fileName}.jpg";
-        pushPost($connection, $arrayData);
+        $jsonData = file_get_contents("php://input");
+        $arrayData = json_decode($jsonData, associative: true);
+
+        $arrayData = protectedData($arrayData);
+        $arrayData = setDefaultItems($arrayData);
+        $arrayData = setSavedImagesData($arrayData);
+
+
+        if (isCorrect($arrayData))
+        {
+            var_dump($arrayData);
+            pushPost($connection, $arrayData);
+        }
+
+        else
+        {
+            echo "Неверные данные";
+            print_r($arrayData);
+        }
+
+        closeDBConnection($connection);
     }
     else
-    {
-        echo "Неверные данные";
-    }
+        echo "Отправьте POST-запрос" . "<br>";
 }
-else
-{
-    echo "Отправьте POST-запрос" . "<br>";
+catch (Exception $e) {
+    echo $e->getMessage();
 }
 
-closeDBConnection($connection);

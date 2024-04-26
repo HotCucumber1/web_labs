@@ -3,40 +3,41 @@ let publish_button = document.getElementById('publish-button');
 let title = document.getElementById('title');
 let description = document.getElementById('description');
 let author = document.getElementById('author');
+let authorImg = document.getElementById('author-img');
 let date = document.getElementById('date');
+let heroImg = document.getElementById('hero-img');
+let heroImgPreview = document.getElementById('hero-img-preview');
 
 let input_fields = [
-    document.getElementById('title'),
-    document.getElementById('description'),
-    document.getElementById('author'),
-    document.getElementById('date'),
+    title,
+    description,
+    author,
+    date,
 ]
 
 
 const SPACE_NUM = 4;
 
-function convertToBase64(image)
+async function convertToBase64(image)
 {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => {
+    return await new Promise((resolve, reject) =>
+    {
+        const reader= new FileReader();
+        reader.onload = () =>
+        {
             resolve(reader.result);
         }
         reader.readAsDataURL(image);
     });
 }
 
-function checkImg(image)
+async function getBase64Image(image)
 {
-    let base64 = "";
     if (image.files[0])
-    {
-        base64 = convertToBase64(image.files[0]).then((img) => img);
-    }
-    return base64;
+        return await convertToBase64(image.files[0]);
 }
 
-function getData()
+async function getData()
 {
     const title = document.getElementById('title');
     const description = document.getElementById('description');
@@ -47,18 +48,16 @@ function getData()
     const heroImgPreview = document.getElementById('hero-img-preview');
     const content = document.getElementById('post-content');
 
-    console.log(checkImg(authorImg));
-
     return {
-        'title': title.value,
-        'description': description.value,
-        'author': author.value,
-        'author_img': checkImg(authorImg),
-        'date': date.value,
-        'hero_img': checkImg(heroImg),
-        'hero_img_preview': checkImg(heroImgPreview),
-        'post_content': content.value,
-    };
+        'title': title.value.trim(),
+        'description': description.value.trim(),
+        'author': author.value.trim(),
+        'author_img': await getBase64Image(authorImg),
+        'date': date.value.trim(),
+        'hero_img': await getBase64Image(heroImg),
+        'hero_img_preview': await getBase64Image(heroImgPreview),
+        'post_content': content.value.trim(),
+    }
 }
 
 function isChecked(data)
@@ -73,14 +72,23 @@ function isChecked(data)
     return true;
 }
 
-function pushData(event)
+async function pushData(event)
 {
-    let data = getData();
+    const url = "/api.php";
+    let data = await getData();
     let status;
     if (isChecked(data))
     {
         status = 0;
         console.log(JSON.stringify(data, null, SPACE_NUM));
+
+        let response = await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json;charset=utf-8"
+            }
+        })
     }
     else
     {
@@ -91,9 +99,9 @@ function pushData(event)
 
 function displayImage(inputElement, imageElement)
 {
-    const file = inputElement.files[0];
-    const inputLabel = document.querySelector(`label[for="${inputElement.id}"]`);
-    const imageURL = URL.createObjectURL(file);
+    let file = inputElement.files[0];
+    let inputLabel = document.querySelector(`label[for="${inputElement.id}"]`);
+    let imageURL = URL.createObjectURL(file);
 
     imageElement.src = imageURL;
     inputLabel.firstElementChild.src = imageURL;
@@ -101,7 +109,7 @@ function displayImage(inputElement, imageElement)
 
 function displayText(inputElement, textElements)
 {
-    for (let i = 0; i<textElements.length; i++)
+    for (let i = 0; i < textElements.length; i++)
     {
         if (inputElement.value !== "")
             textElements[i].textContent = inputElement.value;
@@ -166,7 +174,7 @@ function changeStyles(element)
     if (element.value === "")
         element.className = "input-field";
     else
-        element.className = "input-field_active"
+        element.className = "input-field_active";
 }
 
 // разобраться
@@ -174,7 +182,7 @@ function createErrorHelp(last)
 {
     deleteLastErrorHelp();
 
-    const span = document.createElement('span');
+    let span = document.createElement('span');
     span.className = 'error-help';
     span.innerText = `${last.id} is required`;
 
@@ -185,9 +193,31 @@ function initEventsListeners()
 {
     publish_button.addEventListener('click', pushData);
     for (let element of input_fields)
-    {
         element.addEventListener('input', function (event){ changeStyles(element) });
-    }
+
+    title.addEventListener('input', function (event) {
+        displayText(title, [document.getElementById('post-card-title'),
+                                         document.getElementById('article-title')])
+    });
+    description.addEventListener('input', function (event) {
+        displayText(description, [document.getElementById('post-card-subtitle'),
+                                             document.getElementById('article-subtitle')])
+    });
+    author.addEventListener('input', function (event) {
+        displayText(author, [document.getElementById('post-card-author-name')])
+    });
+    authorImg.addEventListener('input', function (event) {
+        displayImage(authorImg, document.getElementById('author-avatar'))
+    });
+    date.addEventListener('input', function (event) {
+        displayText(date, [document.getElementById('post-card-date')])
+    });
+    heroImg.addEventListener('input', function (event) {
+        displayImage(heroImg, document.getElementById('article-preview-img'))
+    });
+    heroImgPreview.addEventListener('input', function (event) {
+        displayImage(heroImgPreview, document.getElementById('post-card-img'))
+    });
 }
 
 

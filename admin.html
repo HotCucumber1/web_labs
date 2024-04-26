@@ -13,8 +13,13 @@
         <div class="section-header__content">
             <img class="section-header__logo" src="/static/images/logo/admin_logo.svg" alt="Escape.admin">
             <div class="section-header-menu">
-                <a href=""><img class="section-header__user-icon avatar" src="static/images/avatars/N_user.png" alt="User"></a>
-                <a href="/home"><img class="section-header__exit-icon" src="static/images/icons/log_out.svg" alt="Exit"></a>
+                <a class="section-header__user-icon-link" href="">
+                    <div class="section-header__user-icon avatar">N</div>
+                    <!--<img class="section-header__user-icon avatar" src="/static/images/avatars/N_user.png">-->
+                </a>
+                <a class="section-header__exit-icon-link" href="/home">
+                    <img class="section-header__exit-icon" src="static/images/icons/log_out.svg" alt="Exit">
+                </a>
             </div>
         </div>
     </header>
@@ -34,22 +39,17 @@
             <form class="main-info-enter" id="main-form">
                 <div class="main-info-enter-title-input input-block">
                     <label class="main-info-enter-title-input__label input-label" for="title">Title</label>
-                    <input class="main-info-enter-title-input__input-field input-field" type="text" id="title"
-                           oninput="displayText(this, [document.getElementById('article-title'),
-                                                document.getElementById('post-card-title')])">
+                    <input class="main-info-enter-title-input__input-field input-field" type="text" id="title" maxlength="255">
                 </div>
                 
                 <div class="main-info-enter-description-input input-block">
                     <label class="main-info-enter-description-input__label input-label" for="description">Short description</label>
-                    <input class="main-info-enter-description-input__input-field input-field" type="text" id="description"
-                           oninput="displayText(this, [document.getElementById('article-subtitle'),
-                                                       document.getElementById('post-card-subtitle')])">
+                    <input class="main-info-enter-description-input__input-field input-field" type="text" id="description" maxlength="255">
                 </div>
                 
                 <div class="main-info-enter-author-input input-block">
                     <label class="main-info-enter-author-input__label input-label" for="author">Author name</label>
-                    <input class="main-info-enter-author-input__input-field input-field" type="text" id="author"
-                           oninput="displayText(this, [document.getElementById('post-card-author-name')])">
+                    <input class="main-info-enter-author-input__input-field input-field" type="text" id="author" maxlength="255">
                 </div>
                 
                 <div class="main-info-enter-author-img-input input-block">
@@ -59,14 +59,12 @@
                         <span class="main-info-enter-author-img-input__label-sign">Upload</span>
                     </label>
                     <input class="main-info-enter-author-img-input__input-field input-hidden"
-                           type="file" id="author-img" accept="image/*"
-                           onchange="displayImage(this, document.getElementById('author-avatar'))">
+                           type="file" id="author-img" accept="image/*">
                 </div>
                 
                 <div class="main-info-enter-date-input input-block">
                     <label class="main-info-enter-date-input__label input-label" for="date">Publish date</label>
-                    <input class="main-info-enter-date-input__input-field input-field" type="date" id="date"
-                           oninput="displayText(this, [document.getElementById('post-card-date')])">
+                    <input class="main-info-enter-date-input__input-field input-field" type="date" id="date">
                 </div>
                 
                 <div class="main-info-enter-hero-img-input input-block">
@@ -74,8 +72,7 @@
                     <label class="main-info-enter-hero-img-input__label label-image" for="hero-img">
                         <img class="main-info-enter-hero-img-input__label-img hero-image" src="/static/images/icons/hero_image_default_icon.svg" alt="Upload image">
                     </label>
-                    <input class="main-info-enter-hero-img-input__input-field input-hidden" type="file" id="hero-img" accept="image/*"
-                           onchange="displayImage(this, document.getElementById('article-preview-img'))">
+                    <input class="main-info-enter-hero-img-input__input-field input-hidden" type="file" id="hero-img" accept="image/*">
                     <span class="main-info-enter-hero-img-input__size-pointer size-pointer input-label">Size up to 10mb. Format: png, jpeg, gif.</span>
                 </div>
                 
@@ -85,8 +82,7 @@
                         <img class="main-info-enter-hero-preview-img-input__label-img hero-image"
                              src="/static/images/icons/hero_image_preview_default_icon.svg" alt="Upload image">
                     </label>
-                    <input class="main-info-enter-hero-preview-img-input__input-field input-hidden" type="file" id="hero-img-preview" accept="image/*"
-                           onchange="displayImage(this, document.getElementById('post-card-img'))">
+                    <input class="main-info-enter-hero-preview-img-input__input-field input-hidden" type="file" id="hero-img-preview" accept="image/*">
                     <span class="main-info-enter-hero-preview-img-input__size-pointer size-pointer input-label">Size up to 5mb. Format: png, jpeg, gif.</span>
                 </div>
             </form>

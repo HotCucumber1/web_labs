@@ -14,9 +14,10 @@ function getPostsFromDB(mysqli $connect): mysqli_result
                     author_url,
                     publish_date,
                     featured,
-                    type
+                    type,
+                    image_preview
                   FROM post";
-    return $connect -> query($sql_query);
+    return $connect->query($sql_query);
 }
 
 
@@ -38,19 +39,23 @@ function pushPost(mysqli $connect, array $data): void {
                         publish_date,
                         image_url,
                         featured,
-                        type
+                        type,
+                        image_preview
                     )
                   VALUES (
                        '{$data['title']}',
-                       '{$data['subtitle']}',
-                       '{$data['content']}',
+                       '{$data['description']}',
+                       '{$data['post_content']}',
                        '{$data['author']}',
-                       '{$data['author_url']}',
-                       '{$data['publish_date']}',
-                       '{$data['image_url']}',
+                       '{$data['author_img']}',
+                       '{$data['date']}',
+                       '{$data['hero_img']}',
                         {$data['featured']},
-                       '{$data['type']}'
+                       '{$data['type']}',
+                       '{$data['hero_img_preview']}'
                   );";
+
+
     if ($connect->query($sql_query)) {
         echo 'OK';
     } else {
