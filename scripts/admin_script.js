@@ -1,4 +1,4 @@
-let publish_button = document.getElementById('publish-button');
+let publishButton = document.getElementById('publish-button');
 
 let title = document.getElementById('title');
 let description = document.getElementById('description');
@@ -102,16 +102,24 @@ function displayImage(inputElement, imageElement)
     let file = inputElement.files[0];
     let inputLabel = document.querySelector(`label[for="${inputElement.id}"]`);
     let imageURL = URL.createObjectURL(file);
+    let fileExtension = file.name.split('.').at(-1);
 
-    imageElement.src = imageURL;
-    inputLabel.firstElementChild.src = imageURL;
+    if (fileExtension === "png" || fileExtension === "jpeg" || fileExtension === "jpg" || fileExtension === "gif") {
+        imageElement.src = imageURL;
+        inputLabel.firstElementChild.src = imageURL;
+    }
 }
+
 
 function displayText(inputElement, textElements)
 {
     for (let i = 0; i < textElements.length; i++)
     {
         if (inputElement.value !== "")
+            if (inputElement.value.length > 27) {
+                textElements[i].textContent = inputElement.value.slice(0, 27) + "...";
+            }
+        else
             textElements[i].textContent = inputElement.value;
     }
 }
@@ -119,9 +127,7 @@ function displayText(inputElement, textElements)
 function deleteLastMessage()
 {
     if (document.querySelector('.message'))
-    {
         document.body.removeChild(document.querySelector('.message'));
-    }
 }
 
 function createMessage(status)
@@ -163,10 +169,8 @@ function createMessage(status)
 
 function deleteLastErrorHelp()
 {
-    if (document.querySelector('.error-help'))
-    {
+    while (document.querySelector('.error-help'))
         document.querySelector('.error-help').remove();
-    }
 }
 
 function changeStyles(element)
@@ -177,21 +181,68 @@ function changeStyles(element)
         element.className = "input-field_active";
 }
 
+
 // разобраться
-function createErrorHelp(last)
+function createErrorHelp()
 {
     deleteLastErrorHelp();
+    let titleInput = document.getElementById('title');
+    let descriptionInput = document.getElementById('description');
+    let authorNameInput = document.getElementById('author');
+    let dateInput = document.getElementById('date');
+    let contentInput = document.getElementById('post-content');
 
-    let span = document.createElement('span');
-    span.className = 'error-help';
-    span.innerText = `${last.id} is required`;
 
-    last.after(span);
+    if (titleInput.value === "")
+    {
+        let spanTitle = document.createElement('span');
+        spanTitle.className = 'error-help';
+        spanTitle.innerText = 'Title is required';
+        titleInput.className = 'input-field-error_active';
+        titleInput.after(spanTitle);
+    }
+    if (descriptionInput.value === "")
+    {
+        let spanDescription = document.createElement('span');
+        spanDescription.className = 'error-help';
+        spanDescription.innerText = 'Description is required';
+        descriptionInput.className = 'input-field-error_active';
+        descriptionInput.after(spanDescription);
+    }
+    if (authorNameInput.value === "")
+    {
+        let spanAuthor = document.createElement('span');
+        spanAuthor.className = 'error-help';
+        spanAuthor.innerText = 'Author name is required';
+        authorNameInput.className = 'input-field-error_active';
+        authorNameInput.after(spanAuthor);
+    }
+    if (dateInput.value === "")
+    {
+        let spanDate = document.createElement('span');
+        spanDate.className = 'error-help';
+        spanDate.innerText = 'Date is required';
+        dateInput.className = 'input-field-error_active';
+        dateInput.after(spanDate);
+    }
+    if (contentInput.value === "")
+    {
+        let spanContent = document.createElement('span');
+        spanContent.className = 'error-help';
+        spanContent.innerText = 'Content is required';
+        contentInput.className = 'content-block__input-field_active';
+        contentInput.after(spanContent);
+    }
+    else
+    {
+        contentInput.className = 'content-block__input-field';
+    }
 }
 
 function initEventsListeners()
 {
-    publish_button.addEventListener('click', pushData);
+    publishButton.addEventListener('click', pushData);
+    publishButton.addEventListener('click', createErrorHelp);
     for (let element of input_fields)
         element.addEventListener('input', function (event){ changeStyles(element) });
 

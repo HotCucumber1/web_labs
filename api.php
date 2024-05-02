@@ -103,16 +103,13 @@ try {
 
         if (isCorrect($arrayData))
         {
-            var_dump($arrayData);
             pushPost($connection, $arrayData);
         }
-
         else
         {
             echo "Неверные данные";
             print_r($arrayData);
         }
-
         closeDBConnection($connection);
     }
     else

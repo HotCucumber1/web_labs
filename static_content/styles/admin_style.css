@@ -144,6 +144,7 @@ body {
     font-size: 12px;
     line-height: 16px;
     color: #E86961;
+    margin-bottom: 40px;
 }
 
 .main-info {
@@ -226,11 +227,30 @@ input:focus {
     width: 560px;
 }
 
+.input-field-error_active {
+    border-top: none;
+    border-inline: none;
+    border-bottom-width: 1px;
+    border-color: #E86961;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 4px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 560px;
+}
+
 .main-info-enter-author-img-input__label-name {
     margin-bottom: 10px;
 }
 
 .main-info-enter-author-img-input__label-sign {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
     display: inline-flex;
     align-items: center;
 }
@@ -284,6 +304,7 @@ input:focus {
 .main-info-preview-article-preview__heading {
     text-align: center;
     margin-bottom: 36px;
+    overflow: hidden;
 }
 
 .main-info-preview-article-preview__title {
@@ -326,7 +347,7 @@ input:focus {
 }
 
 .main-info-preview-post-card-preview__card {
-    width: fit-content;
+    max-width: 296px;
     border: 1px solid #EAEAEA;
 }
 
@@ -339,6 +360,7 @@ input:focus {
 .main-info-preview-post-card-preview__heading {
     padding: 14px 13px 32px;
     border-bottom: 1px solid #EAEAEA;
+    overflow: hidden;
 }
 
 .main-info-preview-post-card-preview__title {
@@ -376,6 +398,8 @@ input:focus {
     line-height: 26px;
     font-size: 12px;
     color: #999999;
+    max-width: 150px;
+    overflow: hidden;
 }
 
 .main-info-preview-post-card-preview__date {
@@ -400,10 +424,10 @@ input:focus {
 }
 
 .content-block__input-field {
-    max-width: 940px;
-    min-width: 940px;
-    max-height: 160px;
-    min-height: 160px;
+    display: block;
+    width: 940px;
+    height: 160px;
+    resize: none;
     border-width: 1px;
     border-color: #EAEAEA;
     border-radius: 5px;
@@ -416,6 +440,21 @@ input:focus {
 
 .content-block__input-field:focus {
     outline: none;
+}
+
+.content-block__input-field_active {
+    display: block;
+    width: 940px;
+    height: 160px;
+    resize: none;
+    padding: 8px;
+    line-height: 24px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #E86961;
 }
 
 .content-block__input-field::placeholder {
