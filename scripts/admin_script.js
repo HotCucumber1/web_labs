@@ -1,3 +1,5 @@
+const SPACE_NUM = 4;
+
 let publishButton = document.getElementById('publish-button');
 
 let title = document.getElementById('title');
@@ -7,16 +9,15 @@ let authorImg = document.getElementById('author-img');
 let date = document.getElementById('date');
 let heroImg = document.getElementById('hero-img');
 let heroImgPreview = document.getElementById('hero-img-preview');
+let content = document.getElementById('post-content');
 
-let input_fields = [
+let inputFields = [
     title,
     description,
     author,
     date,
 ]
 
-
-const SPACE_NUM = 4;
 
 async function convertToBase64(image)
 {
@@ -31,11 +32,13 @@ async function convertToBase64(image)
     });
 }
 
+
 async function getBase64Image(image)
 {
     if (image.files[0])
         return await convertToBase64(image.files[0]);
 }
+
 
 async function getData()
 {
@@ -48,17 +51,19 @@ async function getData()
     const heroImgPreview = document.getElementById('hero-img-preview');
     const content = document.getElementById('post-content');
 
+
     return {
-        'title': title.value.trim(),
-        'description': description.value.trim(),
-        'author': author.value.trim(),
-        'author_img': await getBase64Image(authorImg),
-        'date': date.value.trim(),
-        'hero_img': await getBase64Image(heroImg),
-        'hero_img_preview': await getBase64Image(heroImgPreview),
-        'post_content': content.value.trim(),
+        title: title.value.trim(),
+        description: description.value.trim(),
+        author: author.value.trim(),
+        author_img: await getBase64Image(authorImg),
+        date: date.value.trim(),
+        hero_img: await getBase64Image(heroImg),
+        hero_img_preview: await getBase64Image(heroImgPreview),
+        post_content: content.value.trim(),
     }
 }
+
 
 function isChecked(data)
 {
@@ -72,11 +77,13 @@ function isChecked(data)
     return true;
 }
 
+
 async function pushData(event)
 {
     const url = "/api.php";
     let data = await getData();
     let status;
+
     if (isChecked(data))
     {
         status = 0;
@@ -97,6 +104,7 @@ async function pushData(event)
     createMessage(status);
 }
 
+
 function displayImage(inputElement, imageElement)
 {
     let file = inputElement.files[0];
@@ -104,7 +112,8 @@ function displayImage(inputElement, imageElement)
     let imageURL = URL.createObjectURL(file);
     let fileExtension = file.name.split('.').at(-1);
 
-    if (fileExtension === "png" || fileExtension === "jpeg" || fileExtension === "jpg" || fileExtension === "gif") {
+    if (fileExtension === "png" || fileExtension === "jpeg" || fileExtension === "jpg" || fileExtension === "gif")
+    {
         imageElement.src = imageURL;
         inputLabel.firstElementChild.src = imageURL;
     }
@@ -116,19 +125,20 @@ function displayText(inputElement, textElements)
     for (let i = 0; i < textElements.length; i++)
     {
         if (inputElement.value !== "")
-            if (inputElement.value.length > 27) {
+            if (inputElement.value.length > 27)
                 textElements[i].textContent = inputElement.value.slice(0, 27) + "...";
-            }
         else
             textElements[i].textContent = inputElement.value;
     }
 }
+
 
 function deleteLastMessage()
 {
     if (document.querySelector('.message'))
         document.body.removeChild(document.querySelector('.message'));
 }
+
 
 function createMessage(status)
 {
@@ -167,11 +177,15 @@ function createMessage(status)
     heading.after(div);
 }
 
+
 function deleteLastErrorHelp()
 {
     while (document.querySelector('.error-help'))
+    {
         document.querySelector('.error-help').remove();
+    }
 }
+
 
 function changeStyles(element)
 {
@@ -182,68 +196,62 @@ function changeStyles(element)
 }
 
 
-// разобраться
 function createErrorHelp()
 {
     deleteLastErrorHelp();
-    let titleInput = document.getElementById('title');
-    let descriptionInput = document.getElementById('description');
-    let authorNameInput = document.getElementById('author');
-    let dateInput = document.getElementById('date');
-    let contentInput = document.getElementById('post-content');
 
-
-    if (titleInput.value === "")
+    if (title.value === "")
     {
         let spanTitle = document.createElement('span');
         spanTitle.className = 'error-help';
         spanTitle.innerText = 'Title is required';
-        titleInput.className = 'input-field-error_active';
-        titleInput.after(spanTitle);
+        title.className = 'input-field-error_active';
+        title.after(spanTitle);
     }
-    if (descriptionInput.value === "")
+    if (description.value === "")
     {
         let spanDescription = document.createElement('span');
         spanDescription.className = 'error-help';
         spanDescription.innerText = 'Description is required';
-        descriptionInput.className = 'input-field-error_active';
-        descriptionInput.after(spanDescription);
+        description.className = 'input-field-error_active';
+        description.after(spanDescription);
     }
-    if (authorNameInput.value === "")
+    if (author.value === "")
     {
         let spanAuthor = document.createElement('span');
         spanAuthor.className = 'error-help';
         spanAuthor.innerText = 'Author name is required';
-        authorNameInput.className = 'input-field-error_active';
-        authorNameInput.after(spanAuthor);
+        author.className = 'input-field-error_active';
+        author.after(spanAuthor);
     }
-    if (dateInput.value === "")
+    if (date.value === "")
     {
         let spanDate = document.createElement('span');
         spanDate.className = 'error-help';
         spanDate.innerText = 'Date is required';
-        dateInput.className = 'input-field-error_active';
-        dateInput.after(spanDate);
+        date.className = 'input-field-error_active';
+        date.after(spanDate);
     }
-    if (contentInput.value === "")
+    if (content.value === "")
     {
         let spanContent = document.createElement('span');
         spanContent.className = 'error-help';
         spanContent.innerText = 'Content is required';
-        contentInput.className = 'content-block__input-field_active';
-        contentInput.after(spanContent);
+        content.className = 'content-block__input-field_active';
+        content.after(spanContent);
     }
     else
     {
-        contentInput.className = 'content-block__input-field';
+        content.className = 'content-block__input-field';
     }
 }
+
 
 function initEventsListeners()
 {
     publishButton.addEventListener('click', pushData);
     publishButton.addEventListener('click', createErrorHelp);
-    for (let element of input_fields)
+    for (let element of inputFields)
         element.addEventListener('input', function (event){ changeStyles(element) });
 
     title.addEventListener('input', function (event) {
