@@ -36,7 +36,9 @@ closeDBConnection($connection);
         <div class="preview-heading">
             <h1 class="preview-heading__title">Let's do it together.</h1>
             <h2 class="preview-heading__subtitle">We travel the world in search of stories. Come along for the ride.</h2>
-            <button type="button" class="preview-heading__button">View Latest Posts</button>
+            <button type="button" class="preview-heading__button"
+                    id="view-post-button" name="view_post_button">View Latest Posts
+            </button>
         </div>
     </div>
 </header>
@@ -57,8 +59,10 @@ closeDBConnection($connection);
     <hr class="featured-content__line">
     <div class="featured-content__content">
         <?php
-        foreach ($posts as $post) {
-            if ($post['featured'] == 1) {
+        foreach ($posts as $post)
+        {
+            if ($post['featured'] == 1)
+            {
                 include './samples/featured_post_preview.php';
             }
         }
@@ -93,4 +97,5 @@ closeDBConnection($connection);
     </div>
 </footer>
 </body>
+<script src="./scripts/home_script.js" type="application/javascript"></script>
 </html>
