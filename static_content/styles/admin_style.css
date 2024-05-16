@@ -56,6 +56,11 @@ body {
 
 .section-header__logo {
     margin-block: 24px;
+    cursor: pointer;
+}
+
+.section-header__logo:active {
+    transform: scale(0.96);
 }
 
 .section-header__user-icon-link {
@@ -127,6 +132,10 @@ body {
     color: white;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.heading__publish-button:active {
+    transform: scale(0.96);
 }
 
 .info-area {

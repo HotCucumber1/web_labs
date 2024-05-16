@@ -67,14 +67,14 @@ closeDBConnection($connection);
     </p>
 
     <footer class="section-footer">
-        <div class="section-footer__nav-panel">
-            <img class="section-footer__logo" src="/static/images/logo/footer_logo.svg" alt="Escape.">
+        <div class="section-footer-nav-panel">
+            <img class="section-footer-nav-panel__logo" src="/static/images/logo/footer_logo.svg" alt="Escape.">
 
-            <nav class="section-footer__links">
-                <a class="section-footer__link" href="/home">HOME</a>
-                <a class="section-footer__link">CATEGORIES</a>
-                <a class="section-footer__link">ABOUT</a>
-                <a class="section-footer__link">CONTACT</a>
+            <nav class="section-footer-nav-panel__links">
+                <a class="section-footer-nav-panel__link" href="/home">HOME</a>
+                <a class="section-footer-nav-panel__link">CATEGORIES</a>
+                <a class="section-footer-nav-panel__link">ABOUT</a>
+                <a class="section-footer-nav-panel__link">CONTACT</a>
             </nav>
         </div>
     </footer>

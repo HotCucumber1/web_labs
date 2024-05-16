@@ -55,10 +55,12 @@ function pushPost(mysqli $connect, array $data): void {
                        '{$data['hero_img_preview']}'
                   );";
 
-
-    if ($connect->query($sql_query)) {
+    if ($connect->query($sql_query))
+    {
         echo 'OK';
-    } else {
+    }
+    else
+    {
         echo $connect->error;
     }
 }

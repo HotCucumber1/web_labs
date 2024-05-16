@@ -131,10 +131,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
         for (let i = 0; i < textElements.length; i++)
         {
             if (inputElement.value !== "")
+            {
                 if (inputElement.value.length > 27)
+                {
                     textElements[i].textContent = inputElement.value.slice(0, 27) + "...";
+                }
                 else
+                {
                     textElements[i].textContent = inputElement.value;
+                }
+            }
         }
     }
 
@@ -145,7 +151,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         {
             document.body.removeChild(document.querySelector('.message'));
         }
-
     }
 
 

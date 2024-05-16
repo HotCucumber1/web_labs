@@ -3,15 +3,17 @@ require_once './data/db/db_connection.php';
 require './data/db/db_interaction.php';
 
 
-// посмотреть, что приходит
-function saveFile(string $file, string $data): void {
+function saveFile(string $file, string $data): void
+{
     $myFile = fopen($file, 'w');
-    if (!$myFile) {
+    if (!$myFile)
+    {
         echo "Ошибка открытия файл";
         return;
     }
     $result = fwrite($myFile, $data);
-    if (!$result) {
+    if (!$result)
+    {
         echo "Ошибка записи в файл";
         return;
     }
@@ -52,9 +54,13 @@ function protectedData(array $data): array
 function setDefaultItems($data): array
 {
     if (!$data['featured'])
+    {
         $data['featured'] = 0;
+    }
     if (!$data['type'])
+    {
         $data['type'] = '';
+    }
     return $data;
 }
 
@@ -85,9 +91,14 @@ function setSavedImagesData($data): array
 }
 
 
-try {
+try
+{
     $method = $_SERVER['REQUEST_METHOD'];
     $jsonData = file_get_contents("php://input");
+
+    $arrayData = json_decode($jsonData, associative: true);
+    var_dump($arrayData);
+
 
     if ($method === 'POST')
     {
@@ -96,10 +107,11 @@ try {
         $jsonData = file_get_contents("php://input");
         $arrayData = json_decode($jsonData, associative: true);
 
+        var_dump($arrayData);
+
         $arrayData = protectedData($arrayData);
         $arrayData = setDefaultItems($arrayData);
         $arrayData = setSavedImagesData($arrayData);
-
 
         if (isCorrect($arrayData))
         {
@@ -113,9 +125,10 @@ try {
         closeDBConnection($connection);
     }
     else
+    {
         echo "Отправьте POST-запрос" . "<br>";
+    }
 }
 catch (Exception $e) {
     echo $e->getMessage();
 }
-

@@ -40,7 +40,7 @@ body {
     text-decoration: none;
 }
 
-.section-footer__link {
+.section-footer-nav-panel__link {
     padding-inline: 10px;
     cursor: pointer;
     font-family: "Oxygen", sans-serif;
@@ -49,7 +49,7 @@ body {
     text-decoration: none;
 }
 
-.section-footer__links {
+.section-footer-nav-panel__links {
     float: right;
     vertical-align: middle;
     display: inline-block;
@@ -98,16 +98,16 @@ body {
     padding-top: 31px;
 }
 
-.section-footer__nav-panel {
+.section-footer-nav-panel {
     max-width: 960px;
     margin-inline: auto;
 }
 
-.section-footer__logo path {
+.section-footer-nav-panel__logo path {
     fill: white;
 }
 
-.section-footer__logo {
+.section-footer-nav-panel__logo {
     display: inline-block;
     margin-top: 3px;
 }

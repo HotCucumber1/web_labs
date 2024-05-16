@@ -14,9 +14,11 @@ closeDBConnection($connection);
 <head>
     <meta charset="UTF-8">
     <title>Escape</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/static/styles/main_page_style.css">
 </head>
@@ -24,13 +26,20 @@ closeDBConnection($connection);
 <body>
 <header class="section-header">
     <div class="section-header__nav-panel nav-panel">
-        <a href="/home"><img class="section-header__logo" src="static/images/logo/footer_logo.svg" alt="Escape."></a>
+        <a href="/home">
+            <img class="section-header__logo" src="static/images/logo/footer_logo.svg" alt="Escape.">
+        </a>
         <nav class="section-header__header-links links">
             <a class="section-header__link link" href="/home">HOME</a>
             <a class="section-header__link link">CATEGORIES</a>
             <a class="section-header__link link">ABOUT</a>
             <a class="section-header__link link">CONTACT</a>
         </nav>
+        <div class="section-header__hamburger-menu">
+            <hr class="section-header__hamburger-menu-line">
+            <hr class="section-header__hamburger-menu-line">
+            <hr class="section-header__hamburger-menu-line">
+        </div>
     </div>
     <div class="preview">
         <div class="preview-heading">
@@ -57,7 +66,7 @@ closeDBConnection($connection);
 <div class="featured-content">
     <h3 class="featured-content__title">Featured Posts</h3>
     <hr class="featured-content__line">
-    <div class="featured-content__content">
+    <div class="featured-content__posts">
         <?php
         foreach ($posts as $post)
         {
@@ -74,10 +83,12 @@ closeDBConnection($connection);
     <h3 class="recent-content__title">Most Recent</h3>
     <hr class="recent-content__line">
 
-    <div class="recent-content__content">
+    <div class="recent-content__posts">
         <?php
-        foreach ($posts as $post) {
-            if ($post['featured'] == 0) {
+        foreach ($posts as $post)
+        {
+            if ($post['featured'] == 0)
+            {
                 include './samples/recent_post_preview.php';
             }
         }
@@ -86,15 +97,25 @@ closeDBConnection($connection);
 </div>
 
 <footer class="section-footer">
-    <div class="section-footer__nav-panel nav-panel">
-        <img class="section-footer__logo" src="static/images/logo/footer_logo.svg" alt="Escape.">
-        <nav class="section-footer__links links">
-            <a class="section-footer__link link" href="/home">HOME</a>
-            <a class="section-footer__link link">CATEGORIES</a>
-            <a class="section-footer__link link">ABOUT</a>
-            <a class="section-footer__link link">CONTACT</a>
-        </nav>
+    <form class="section-footer-feedback" id="feedback-form">
+        <h3 class="section-footer-feedback__title">Stay in Touch</h3>
+        <hr class="section-footer-feedback__line">
+        <input class="section-footer__email-input" type="email" placeholder="Enter your email address">
+        <button class="section-footer-feedback__submit-button" type="submit" form="feedback-form">Submit</button>
+    </form>
+
+    <div class="section-footer__nav-panel-background">
+        <div class="section-footer-nav-panel nav-panel">
+            <img class="section-footer-nav-panel__logo" src="static/images/logo/footer_logo.svg" alt="Escape.">
+            <nav class="section-footer-nav-panel__links links">
+                <a class="section-footer-nav-panel__link link" href="/home">HOME</a>
+                <a class="section-footer-nav-panel__link link">CATEGORIES</a>
+                <a class="section-footer-nav-panel__link link">ABOUT</a>
+                <a class="section-footer-nav-panel__link link">CONTACT</a>
+            </nav>
+        </div>
     </div>
+
 </footer>
 </body>
 <script src="./scripts/home_script.js" type="application/javascript"></script>
