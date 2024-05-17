@@ -45,7 +45,7 @@ closeDBConnection($connection);
 
 <body>
     <header class="section-header">
-        <div class="section-header__nav-panel">
+        <div class="section-header-nav-panel">
             <a href="/home"><img class="section-header__logo" src="/static/images/logo/header_logo.svg" alt="Escape."></a>
 
             <nav class="section-header__links">
@@ -62,7 +62,7 @@ closeDBConnection($connection);
 
     <img class="image" src="<?= $post['image_url'] ?>" alt="<?= $post['title'] ?>">
 
-    <p class="mainText">
+    <p class="main-text">
         <?= $post['content'] ?>
     </p>
 

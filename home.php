@@ -25,7 +25,7 @@ closeDBConnection($connection);
 
 <body>
 <header class="section-header">
-    <div class="section-header__nav-panel nav-panel">
+    <div class="section-header-nav-panel nav-panel">
         <a href="/home">
             <img class="section-header__logo" src="static/images/logo/footer_logo.svg" alt="Escape.">
         </a>
