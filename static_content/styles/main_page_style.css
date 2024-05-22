@@ -75,6 +75,40 @@ body {
     border: 1px solid #D9D9D9;
 }
 
+.section-header__popup {
+    background-color: #2E2E2EE6;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 10;
+    top: 70px;
+    right: 34px;
+    left: 34px;
+}
+
+.section-header__popup-link:active {
+    transform: scale(0.83);
+}
+
+.popup_closed {
+    display: none;
+}
+
+.popup_opened {
+    display: block;
+}
+
+.section-header__popup-link {
+    display: block;
+    padding-inline: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 100px;
+}
+
 .preview-heading {
     text-align: center;
     margin-inline: 68px;

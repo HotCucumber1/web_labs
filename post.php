@@ -54,10 +54,18 @@ closeDBConnection($connection);
                 <a class="section-header__link">ABOUT</a>
                 <a class="section-header__link">CONTACT</a>
             </nav>
+
             <div class="section-header__hamburger-menu">
                 <hr class="section-header__hamburger-menu-line">
                 <hr class="section-header__hamburger-menu-line">
                 <hr class="section-header__hamburger-menu-line">
+            </div>
+
+            <div class="section-header__popup popup_closed" id="header-popover">
+                <a class="section-header__popup-link" href="/home">HOME</a>
+                <a class="section-header__popup-link">CATEGORIES</a>
+                <a class="section-header__popup-link">ABOUT</a>
+                <a class="section-header__popup-link">CONTACT</a>
             </div>
         </div>
     </header>
@@ -84,4 +92,5 @@ closeDBConnection($connection);
         </div>
     </footer>
 </body>
+<script type="application/javascript" src="scripts/post_script.js"></script>
 </html>

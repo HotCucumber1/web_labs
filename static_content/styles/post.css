@@ -33,7 +33,7 @@ body {
     cursor: pointer;
     font-size: 12px;
     font-family: "Oxygen", sans-serif;
-    color: rgba(46, 46, 46, 1);
+    color: rgb(46, 46, 46);
     text-decoration: none;
 }
 
@@ -46,8 +46,42 @@ body {
 }
 
 .section-header__hamburger-menu-line {
-    background-color: #7A7A7A;
-    border: 1px solid #7A7A7A;
+    background-color: rgb(122, 122, 122);
+    border: 1px solid rgb(122, 122, 122);
+}
+
+.section-header__popup {
+    background-color: rgba(46, 46, 46, 0.95);
+    border-radius: 10px;
+    position: absolute;
+    z-index: 10;
+    top: 70px;
+    right: 34px;
+    left: 34px;
+}
+
+.section-header__popup-link:active {
+    transform: scale(0.83);
+}
+
+.popup_closed {
+    display: none;
+}
+
+.popup_opened {
+    display: block;
+}
+
+.section-header__popup-link {
+    display: block;
+    padding-inline: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 100px;
 }
 
 .title {

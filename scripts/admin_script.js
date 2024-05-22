@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let heroImgPreview = document.getElementById('hero-img-preview');
     let content = document.getElementById('post-content');
 
+
     let inputFields = [
         title,
         description,
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
         createMessage(status);
     }
+
 
 
     function displayImage(inputElement, imageElement)

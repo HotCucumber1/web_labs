@@ -40,6 +40,13 @@ closeDBConnection($connection);
             <hr class="section-header__hamburger-menu-line">
             <hr class="section-header__hamburger-menu-line">
         </div>
+
+        <div class="section-header__popup popup_closed" id="header-popover">
+            <a class="section-header__popup-link" href="/home">HOME</a>
+            <a class="section-header__popup-link">CATEGORIES</a>
+            <a class="section-header__popup-link">ABOUT</a>
+            <a class="section-header__popup-link">CONTACT</a>
+        </div>
     </div>
     <div class="preview">
         <div class="preview-heading">
