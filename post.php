@@ -12,7 +12,6 @@ function getId(): ?string
     else
     {
         die("Неверный ID поста");
-        // header("Location: https://localhost:443/home");
     }
 }
 
@@ -36,6 +35,7 @@ closeDBConnection($connection);
 <head>
     <meta charset="UTF-8">
     <title><?= $post['title'] ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
@@ -54,6 +54,11 @@ closeDBConnection($connection);
                 <a class="section-header__link">ABOUT</a>
                 <a class="section-header__link">CONTACT</a>
             </nav>
+            <div class="section-header__hamburger-menu">
+                <hr class="section-header__hamburger-menu-line">
+                <hr class="section-header__hamburger-menu-line">
+                <hr class="section-header__hamburger-menu-line">
+            </div>
         </div>
     </header>
 

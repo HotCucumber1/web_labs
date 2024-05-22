@@ -44,7 +44,7 @@ body {
     margin-bottom: 11px;
 }
 .section-header__logo:active {
-    transform: scale(0.96);
+    transform: scale(0.87);
 }
 
 .section-header__header-links {
@@ -113,7 +113,7 @@ body {
 }
 
 .preview-heading__button:active {
-    transform: scale(0.96);
+    transform: scale(0.87);
 }
 
 .menu {
@@ -179,7 +179,7 @@ body {
 }
 
 .featured-content-block:active {
-    transform: scale(0.98);
+    transform: scale(0.87);
 }
 
 .featured-content__block-heading {
@@ -297,7 +297,7 @@ body {
 }
 
 .recent-content-block:active {
-    transform: scale(0.98);
+    transform: scale(0.87);
 }
 
 .recent-content__block-image {
@@ -438,7 +438,7 @@ body {
 }
 
 .section-footer-feedback__submit-button:active {
-    transform: scale(0.96);
+    transform: scale(0.87);
 }
 
 .section-footer__nav-panel-background {

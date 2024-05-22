@@ -37,13 +37,26 @@ body {
     text-decoration: none;
 }
 
+.section-header__hamburger-menu {
+    display: none;
+    width: 35px;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.section-header__hamburger-menu-line {
+    background-color: #7A7A7A;
+    border: 1px solid #7A7A7A;
+}
+
 .title {
     font-family: "Lora", serif;
     font-size: 50px;
     text-align: center;
     margin-bottom: 20px;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 0.04em;
     color: rgb(46, 46, 46);
 }
 
@@ -103,6 +116,7 @@ body {
     cursor: pointer;
     font-family: "Oxygen", sans-serif;
     font-size: 12px;
+    line-height: 26px;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
 }
@@ -110,17 +124,17 @@ body {
 
 @media screen and (max-width: 1024px) {
     .section-header-nav-panel {
-        width: 93%;
-        margin-inline: 32px;
+        width: 84%;
+        margin-inline: 8%;
     }
 
     .main-text {
-        margin-inline: 32px;
+        margin-inline: 8%;
     }
 
     .section-footer-nav-panel {
-        width: 93%;
-        margin-inline: 32px;
+        width: 84%;
+        margin-inline: 8%;
     }
 }
 
@@ -132,6 +146,49 @@ body {
 
 }
 
+@media screen and (max-width: 550px) {
+    .section-header__hamburger-menu {
+        display: flex;
+        margin-inline: auto 0;
+    }
+
+    .section-header__links {
+        display: none;
+    }
+
+    .image {
+        margin-bottom: 70px;
+    }
+
+    .title {
+        font-size: 40px;
+        margin-inline: 8%;
+    }
+
+    .subtitle {
+        margin-bottom: 70px;
+        margin-inline: 8%;
+    }
+
+    .main-text {
+        font-size: 20px;
+        text-align: justify;
+    }
+}
+
 @media screen and (max-width: 480px) {
+    .section-footer-nav-panel__logo {
+        padding-bottom: 85px;
+    }
+
+    .section-footer-nav-panel__links {
+        text-align: right;
+    }
+
+    .section-footer-nav-panel__link {
+        display: block;
+    }
+
+
 
 }
