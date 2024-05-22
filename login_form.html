@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles/login_form_styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="content">
+        <div class="heading">
+            <img class="heading__title-img" src="static/images/logo/login_logo.svg" alt="Escape.author">
+            <h2 class="heading__subtitle">Log in to start creating</h2>
+        </div>
+
+        <form class="login-form">
+            <h2 class="login-form__title">Log In</h2>
+            <div class="login-form-error-message">
+                <img class="login-form-error-message__icon" src="static/images/icons/alert-circle.svg" alt="Error">
+                <span class="login-form-error-message__message">Email or password is incorrect</span>
+            </div>
+            <div class="login-form-email-input input-block">
+                <label class="login-form-email-input__label input-label" for="email">Email</label>
+                <input class="login-form-email-input__field input-field" type="email" id="email">
+            </div>
+            
+            <div class="login-form-password-input input-block">
+                <label class="login-form-password-input__label input-label" for="password">Password</label>
+                <input class="login-form-password-input__field input-field" type="password" id="password">
+                <img class="login-form-password-input__show-button" src="static/images/icons/eye.png" alt="Show">
+            </div>
+            
+            <button class="login-form__submit-button">Log In</button>
+        </form>
+    </div>
+
+</body>
+<script type="application/javascript" src="scripts/login_form_script.js"></script>
+</html>

@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/background/login_bg.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #42464928;
+    background-blend-mode: darken;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15%;
+    justify-content: center;
+}
+
+.heading {
+    margin-top: 333px;
+}
+
+.heading__title-img {
+    margin-bottom: 16px;
+}
+
+.heading__subtitle {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 25px;
+    color: white;
+}
+
+.login-form {
+    margin-top: 120px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 56px 40px 0;
+    height: 560px;
+}
+
+.login-form__title {
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    margin-bottom: 50px;
+}
+
+.login-form-error-message {
+    /*display: none;*/
+    border-radius: 5px;
+    display: flex;
+    padding-block: 10px;
+    padding-left: 12px;
+    margin-bottom: 40px;
+    background-color: #FFEBEA;
+    border-left: 2px solid #E86961;
+}
+
+.login-form-error-message__icon {
+    margin-right: 10px;
+}
+
+.login-form-error-message__message {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #2E2E2E;
+}
+
+
+.input-block {
+    margin-bottom: 40px;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 6px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #7A7A7A;
+}
+
+.input-field {
+    border-top: none;
+    border-inline: none;
+    border-bottom-width: 1px;
+    border-color: #EAEAEA;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    line-height: 24px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 8px 4px;
+    width: 400px;
+}
+
+.input-field:focus {
+    outline: none;
+    background-color: #F7F7F7;
+    border-top: none;
+    border-inline: none;
+    border-bottom-width: 1px;
+    border-color: #2E2E2E;
+}
+
+.login-form__submit-button {
+    border: none;
+    border-radius: 3px;
+    padding: 12px 24px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #DD783F;
+    color: white;
+    cursor: pointer;
+}
+
+.login-form-password-input {
+    position: relative;
+}
+
+.login-form-password-input__field {
+    padding-right: 30px;
+}
+
+.login-form-password-input__show-button {
+    position: absolute;
+    top: 29px;
+    right: 4px;
+    cursor: pointer;
+}
+
+.login-form-password-input__show-button:active {
+    transform: scale(0.87);
+}
+
+.login-form__submit-button:hover {
+    opacity: 80%;
+}
+
+.login-form__submit-button:active {
+    transform: scale(0.87);
+}
+
+@media  screen and (max-width: 1024px) {
+    .content {
+        margin-inline: 80px;
+    }
+}
+
+@media  screen and (max-width: 997px) {
+    .heading {
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .login-form {
+        margin-top: 50px;
+    }
+}
+
+@media  screen and (max-width: 585px) {
+    .heading {
+        margin-top: 80px;
+    }
+
+    .content {
+        margin: 0;
+        width: 100%;
+    }
+
+    .login-form {
+        width: 82%;
+    }
+
+    .input-field {
+        width: 100%;
+    }
+}
