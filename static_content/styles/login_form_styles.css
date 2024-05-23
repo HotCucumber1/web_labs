@@ -52,9 +52,8 @@ body {
 }
 
 .login-form-error-message {
-    /*display: none;*/
+    display: none;
     border-radius: 5px;
-    display: flex;
     padding-block: 10px;
     padding-left: 12px;
     margin-bottom: 40px;
@@ -90,6 +89,7 @@ body {
 }
 
 .input-field {
+    display: block;
     border-top: none;
     border-inline: none;
     border-bottom-width: 1px;
@@ -113,17 +113,13 @@ body {
     border-color: #2E2E2E;
 }
 
-.login-form__submit-button {
-    border: none;
-    border-radius: 3px;
-    padding: 12px 24px;
+.error-help {
+    display: none;
     font-family: "Oxygen", sans-serif;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    background-color: #DD783F;
-    color: white;
-    cursor: pointer;
+    font-size: 12px;
+    line-height: 16px;
+    color: #E86961;
 }
 
 .login-form-password-input {
@@ -145,6 +141,19 @@ body {
     transform: scale(0.87);
 }
 
+.login-form__submit-button {
+    border: none;
+    border-radius: 3px;
+    padding: 12px 24px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #DD783F;
+    color: white;
+    cursor: pointer;
+}
+
 .login-form__submit-button:hover {
     opacity: 80%;
 }
@@ -153,13 +162,13 @@ body {
     transform: scale(0.87);
 }
 
-@media  screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .content {
         margin-inline: 80px;
     }
 }
 
-@media  screen and (max-width: 997px) {
+@media screen and (max-width: 997px) {
     .heading {
         margin-top: 80px;
         text-align: center;

@@ -1,3 +1,8 @@
+<?php
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +26,7 @@
                         <span>N</span>
                     </div>
                 </a>
-                <a class="section-header__exit-icon-link" href="/home">
+                <a class="section-header__exit-icon-link" href="/api/logout">
                     <img class="section-header__exit-icon" src="static/images/icons/log_out.svg" alt="Exit">
                 </a>
             </div>

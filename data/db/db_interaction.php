@@ -64,3 +64,13 @@ function pushPost(mysqli $connect, array $data): void {
         echo $connect->error;
     }
 }
+
+function getUsers(mysqli $connect): mysqli_result
+{
+    $sql_query = "SELECT
+                    user_id,
+                    email,
+                    password
+                  FROM user";
+    return $connect->query($sql_query);
+}

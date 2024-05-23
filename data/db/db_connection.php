@@ -11,6 +11,7 @@ function createDBConnection(): mysqli {
 }
 
 
+
 function closeDBConnection(mysqli $connect): void {
     $connect->close();
 }

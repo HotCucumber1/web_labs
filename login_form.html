@@ -19,20 +19,23 @@
             <h2 class="login-form__title">Log In</h2>
             <div class="login-form-error-message">
                 <img class="login-form-error-message__icon" src="static/images/icons/alert-circle.svg" alt="Error">
-                <span class="login-form-error-message__message">Email or password is incorrect</span>
+                <span class="login-form-error-message__message"></span>
             </div>
+            
             <div class="login-form-email-input input-block">
                 <label class="login-form-email-input__label input-label" for="email">Email</label>
-                <input class="login-form-email-input__field input-field" type="email" id="email">
+                <input class="login-form-email-input__field input-field" type="text" id="email">
+                <span class="login-form-email-input__error error-help"></span>
             </div>
             
             <div class="login-form-password-input input-block">
                 <label class="login-form-password-input__label input-label" for="password">Password</label>
                 <input class="login-form-password-input__field input-field" type="password" id="password">
                 <img class="login-form-password-input__show-button" src="static/images/icons/eye.png" alt="Show">
+                <span class="login-form-password-input__error error-help"></span>
             </div>
             
-            <button class="login-form__submit-button">Log In</button>
+            <button class="login-form__submit-button" type="submit">Log In</button>
         </form>
     </div>
 

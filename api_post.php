@@ -2,6 +2,18 @@
 require_once './data/db/db_connection.php';
 require './data/db/db_interaction.php';
 
+function authBySession(int $userId): bool
+{
+    session_name('auth');
+    session_start();
+    $sessionId = $_SESSION['user_id'] ?? null;
+    if ($userId === $sessionId)
+    {
+        return true;
+    }
+    return false;
+}
+
 
 function saveFile(string $file, string $data): void
 {
@@ -69,7 +81,7 @@ function saveImage(string $image, string $fileName, string $dir): string
     $imageArray = explode(';base64,', $image);
     $imageExtension = str_replace('data:image/', '',  $imageArray[0]);
     $imageDecode = base64_decode($imageArray[1]);
-    saveFile("./static_content/images/{$dir}/{$fileName}.{$imageExtension}", $imageDecode);
+    saveFile("../static_content/images/{$dir}/{$fileName}.{$imageExtension}", $imageDecode);
     return $imageExtension;
 }
 
@@ -94,11 +106,6 @@ function setSavedImagesData($data): array
 try
 {
     $method = $_SERVER['REQUEST_METHOD'];
-    $jsonData = file_get_contents("php://input");
-
-    $arrayData = json_decode($jsonData, associative: true);
-    var_dump($arrayData);
-
 
     if ($method === 'POST')
     {

@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     async function pushData(event)
     {
-        const url = "/api.php";
+        const url = "/api/post";
         let data = await getData();
         let status;
 
@@ -308,6 +308,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         {
             displayImage(heroImgPreview, document.getElementById('post-card-img'))
         });
+
     }
 
     initEventsListeners();
