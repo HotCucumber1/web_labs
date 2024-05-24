@@ -51,6 +51,7 @@ body {
 }
 
 .section-header__popup {
+    display: none;
     background-color: rgba(46, 46, 46, 0.95);
     border-radius: 10px;
     position: absolute;
@@ -62,14 +63,6 @@ body {
 
 .section-header__popup-link:active {
     transform: scale(0.83);
-}
-
-.popup_closed {
-    display: none;
-}
-
-.popup_opened {
-    display: block;
 }
 
 .section-header__popup-link {

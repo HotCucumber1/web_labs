@@ -33,6 +33,7 @@ try
         $isFound = false;
         $connection = createDBConnection();
         $users = getUsers($connection);
+        closeDBConnection($connection);
 
         foreach ($users as $user)
         {
@@ -50,7 +51,6 @@ try
                 }
             }
         }
-        closeDBConnection($connection);
         if (!$isFound)
         {
             header("HTTP/1.1 401 Not Found");

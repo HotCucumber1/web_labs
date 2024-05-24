@@ -61,7 +61,7 @@ closeDBConnection($connection);
                 <hr class="section-header__hamburger-menu-line">
             </div>
 
-            <div class="section-header__popup popup_closed" id="header-popover">
+            <div class="section-header__popup" id="header-popover">
                 <a class="section-header__popup-link" href="/home">HOME</a>
                 <a class="section-header__popup-link">CATEGORIES</a>
                 <a class="section-header__popup-link">ABOUT</a>

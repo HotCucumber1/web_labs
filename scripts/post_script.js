@@ -5,14 +5,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     function openPopUp(event)
     {
+        console.log(1);
         if (!isPopUpShown)
         {
-            popUp.className = "section-header__popup popup_opened";
+            popUp.style.display = "block";
             isPopUpShown = true;
         }
         else
         {
-            popUp.className = "section-header__popup popup_closed";
+            popUp.style.display = "none";
+            isPopUpShown = false;
+        }
+    }
+
+    function closePopUp(event)
+    {
+        if (!popUp.contains(event.target) && !popupButton.contains(event.target))
+        {
+            popUp.style.display = 'none';
             isPopUpShown = false;
         }
     }
@@ -20,6 +30,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     function initEventsListener()
     {
         popupButton.addEventListener("click", openPopUp);
+        document.addEventListener("click", closePopUp);
     }
 
 

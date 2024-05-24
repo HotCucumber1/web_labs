@@ -18,12 +18,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
     {
         if (!popUpShown)
         {
-            popUp.className = "section-header__popup popup_opened";
+            popUp.style.display = "block";
             popUpShown = true;
         }
         else
         {
-            popUp.className = "section-header__popup popup_closed";
+            popUp.style.display = "none";
+            popUpShown = false;
+        }
+    }
+
+    function closePopUp(event)
+    {
+        if (!popUp.contains(event.target) && !popupButton.contains(event.target))
+        {
+            popUp.style.display = 'none';
             popUpShown = false;
         }
     }
@@ -32,6 +41,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     {
         viewPostButton.addEventListener("click", scrollToPost);
         popupButton.addEventListener("click", openPopUp);
+        document.addEventListener("click", closePopUp);
     }
 
 

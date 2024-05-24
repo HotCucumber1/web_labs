@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-    const EMAIL_REGULAR_EXPRESSION = /[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0_-]/;
+    const EMAIL_REGULAR_EXPRESSION = /[a-zA-Z0-9._-]+@[a-zA-Z._-]+\.[a-zA-Z_-]/;
 
     let form = document.querySelector(".login-form");
     let email = document.querySelector(".login-form-email-input__field");
@@ -40,6 +40,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     function isDataChecked()
     {
+        return !(email.value === "" || password.value === "" || password.value.length < 6 ||
+            (email.value !== "" && !isEmailValid(email.value)));
+    }
+
+    function showNotFoundMessage()
+    {
+        errorMessage.style.display = "flex";
+        errorMessageText.innerText = "Email or password is incorrect.";
+    }
+
+    function showErrorMessage()
+    {
         let emailError = false;
         let passwordError = false;
         if (email.value === "")
@@ -49,15 +61,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
             email.style.borderColor = "#E86961";
             emailError = true;
         }
-        if (password.value === "")
+        if (password.value === "" || password.value.length < 6)
         {
             passwordInputError.innerText = "Password is required.";
             passwordInputError.style.display = "block";
             password.style.borderColor = "#E86961";
-            passwordError = true;
-        }
-        else if (password.value.length < 6)
-        {
             passwordError = true;
         }
         else
@@ -80,25 +88,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
             email.style.borderColor = "#E86961";
             emailError = true;
         }
-        else
-        {
-            errorMessage.style.display = "none";
-            emailInputError.style.display = "none";
-            email.style.borderColor = "#2E2E2E";
-        }
         if (emailError || passwordError)
         {
-            errorMessage.style.display = "flex";
-            errorMessageText.innerText = "Email or password is incorrect.";
-            return false;
+            showNotFoundMessage();
         }
-        return true;
     }
 
-    function showNotFoundMessage()
+    function closeErrorMessage()
     {
-        errorMessage.style.display = "flex";
-        errorMessageText.innerText = "Email or password is incorrect.";
+        errorMessage.style.display = "none";
+        emailInputError.style.display = "none";
+        email.style.borderColor = "#2E2E2E";
+        passwordInputError.style.display = "none";
+        password.style.borderColor = "#2E2E2E";
     }
 
 
@@ -115,6 +117,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         event.preventDefault();
         if (isDataChecked())
         {
+            closeErrorMessage();
             const url = "/api/login";
             let data = getData();
 
@@ -135,7 +138,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 showNotFoundMessage();
             }
         }
-
+        else
+        {
+            showErrorMessage();
+        }
     }
 
     function initEventsListener()
