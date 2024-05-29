@@ -1,4 +1,16 @@
 <?php
+
+session_start();
+if (!is_null($_SESSION["user_id"]))
+{
+    $userName = $_SESSION["user_name"];
+}
+else
+{
+    echo "You need to login";
+    header("HTTP/1.1 401 Not Found");
+    die();
+}
 ?>
 
 
@@ -22,8 +34,8 @@
             
             <div class="section-header-menu">
                 <a class="section-header__user-icon-link" href="">
-                    <div class="section-header__user-icon avatar">
-                        <span>N</span>
+                    <div class="section-header__user-icon avatar" style="background-color: <?= $_SESSION['color']?>">
+                        <span><?= mb_strtoupper($userName[0]) ?></span>
                     </div>
                 </a>
                 <a class="section-header__exit-icon-link" href="/api/logout">

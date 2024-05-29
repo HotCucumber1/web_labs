@@ -4,6 +4,14 @@ require_once "./data/db/db_interaction.php";
 require_once "./data/config/config.php";
 
 
+function getRandomColor(): string
+{
+    $r = rand(0, 255);
+    $g = rand(0, 255);
+    $b = rand(0, 255);
+    return "rgb({$r}, {$g}, {$b})";
+}
+
 function hashPassword(string $password): string
 {
     $salt = "Sugar";
@@ -42,10 +50,20 @@ try
                 $password = hashPassword($arrayData["password"]);
                 if ($password === $user["password"])
                 {
-                    session_name($user["email"]);
-                    session_start();
-                    $_SESSION['user_id'] = (int)$user["user_id"];
+                    $sessionName = explode("@", $user["email"])[0];
 
+                    session_start();
+                    session_name($sessionName);
+
+                    $_SESSION['user_id'] = (int)$user["user_id"];
+                    if (!$_SESSION['user_name'])
+                    {
+                        $_SESSION['user_name'] = $sessionName;
+                    }
+                    if (!$_SESSION['color'])
+                    {
+                        $_SESSION['color'] = getRandomColor();
+                    }
                     $isFound = true;
                     header("HTTP/1.1 200 OK");
                 }
