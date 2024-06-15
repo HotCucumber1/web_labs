@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     const EMAIL_REGULAR_EXPRESSION = /[a-zA-Z0-9._-]+@[a-zA-Z._-]+\.[a-zA-Z_-]/;
 
-    // const
     const form = document.querySelector(".login-form");
     const email = document.querySelector(".login-form-email-input__field");
     const password = document.querySelector(".login-form-password-input__field");
@@ -11,8 +10,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const errorMessageText = document.querySelector(".login-form-error-message__message");
     const passwordButton = document.querySelector(".login-form-password-input__show-button");
     let passwordButtonState = "show";
-
-    // delete button
 
     function changePasswordButton(event)
     {
@@ -50,7 +47,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     function showErrorMessage()
     {
-        // вынести в классы (обращаться к родителям и детям)
+        // вынести в классы
         let emailError = false;
         let passwordError;
         if (email.value === "")
