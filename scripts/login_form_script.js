@@ -1,20 +1,18 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     const EMAIL_REGULAR_EXPRESSION = /[a-zA-Z0-9._-]+@[a-zA-Z._-]+\.[a-zA-Z_-]/;
 
-    let form = document.querySelector(".login-form");
-    let email = document.querySelector(".login-form-email-input__field");
-    let password = document.querySelector(".login-form-password-input__field");
-
-    let emailInputError = document.querySelector(".login-form-email-input__error");
-    let passwordInputError = document.querySelector(".login-form-password-input__error");
-
-    let errorMessage = document.querySelector(".login-form-error-message");
-    let errorMessageText = document.querySelector(".login-form-error-message__message");
-
-    let passwordButton = document.querySelector(".login-form-password-input__show-button");
+    // const
+    const form = document.querySelector(".login-form");
+    const email = document.querySelector(".login-form-email-input__field");
+    const password = document.querySelector(".login-form-password-input__field");
+    const emailInputError = document.querySelector(".login-form-email-input__error");
+    const passwordInputError = document.querySelector(".login-form-password-input__error");
+    const errorMessage = document.querySelector(".login-form-error-message_hidden");
+    const errorMessageText = document.querySelector(".login-form-error-message__message");
+    const passwordButton = document.querySelector(".login-form-password-input__show-button");
     let passwordButtonState = "show";
 
-    let submitButton = document.querySelector(".login-form__submit-button");
+    // delete button
 
     function changePasswordButton(event)
     {
@@ -46,47 +44,49 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     function showNotFoundMessage()
     {
-        errorMessage.style.display = "flex";
+        errorMessage.className = "login-form-error-message_shown";
         errorMessageText.innerText = "Email or password is incorrect.";
     }
 
     function showErrorMessage()
     {
+        // вынести в классы (обращаться к родителям и детям)
         let emailError = false;
-        let passwordError = false;
+        let passwordError;
         if (email.value === "")
         {
             emailInputError.innerText = "Email is required.";
-            emailInputError.style.display = "block";
-            email.style.borderColor = "#E86961";
+            emailInputError.className = "error-help_shown"; // style.display = "block";
+            email.classList.add("input-field_error");
             emailError = true;
+        }
+        else if (email.value !== "" && !isEmailValid(email.value))
+        {
+            emailInputError.innerText = "Incorrect email format. Correct format is ****@**.***";
+            emailInputError.className = "error-help_shown";
+            email.classList.add("input-field_error");
+            emailError = true;
+        }
+        else
+        {
+            emailInputError.innerText = "";
+            emailInputError.className = "error-help_hidden";
+            email.classList.remove("input-field_error");
+            emailError = false;
         }
         if (password.value === "" || password.value.length < 6)
         {
             passwordInputError.innerText = "Password is required.";
-            passwordInputError.style.display = "block";
-            password.style.borderColor = "#E86961";
+            passwordInputError.className = "error-help_shown";
+            password.classList.add("input-field_error");
             passwordError = true;
         }
         else
         {
-            passwordInputError.style.display = "none";
-            password.style.borderColor = "#2E2E2E";
+            passwordInputError.innerText = "";
+            passwordInputError.className = "error-help_shown";
+            password.classList.remove("input-field_error");
             passwordError = false;
-        }
-        if (email.value !== "" && !isEmailValid(email.value))
-        {
-            emailInputError.innerText = "Incorrect email format. Correct format is ****@**.***";
-            emailInputError.style.display = "block";
-            email.style.borderColor = "#E86961";
-            emailError = true;
-        }
-        else if (email.value === "")
-        {
-            emailInputError.innerText = "Email is required.";
-            emailInputError.style.display = "block";
-            email.style.borderColor = "#E86961";
-            emailError = true;
         }
         if (emailError || passwordError)
         {
@@ -96,11 +96,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     function closeErrorMessage()
     {
-        errorMessage.style.display = "none";
-        emailInputError.style.display = "none";
-        email.style.borderColor = "#2E2E2E";
-        passwordInputError.style.display = "none";
-        password.style.borderColor = "#2E2E2E";
+        errorMessage.className = "login-form-error-message_hidden";
+        emailInputError.className = "error-help_hidden";
+        passwordInputError.className = "error-help_hidden";
+        email.className = "input-field";
+        password.className = "input-field";
     }
 
 
@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             closeErrorMessage();
             const url = "/api/login";
             let data = getData();
+            console.log(data);
 
             let response = await fetch(url, {
                 method: "POST",

@@ -46,16 +46,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     async function getData()
     {
-        const title = document.getElementById('title');
-        const description = document.getElementById('description');
-        const author = document.getElementById('author');
-        const authorImg = document.getElementById('author-img');
-        const date = document.getElementById('date');
-        const heroImg = document.getElementById('hero-img');
-        const heroImgPreview = document.getElementById('hero-img-preview');
-        const content = document.getElementById('post-content');
-
-
         return {
             title: title.value.trim(),
             description: description.value.trim(),
@@ -308,7 +298,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         {
             displayImage(heroImgPreview, document.getElementById('post-card-img'))
         });
-
     }
 
     initEventsListeners();

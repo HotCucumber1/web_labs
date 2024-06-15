@@ -51,8 +51,12 @@ body {
     margin-bottom: 50px;
 }
 
-.login-form-error-message {
+.login-form-error-message_hidden {
     display: none;
+}
+
+.login-form-error-message_shown {
+    display: flex;
     border-radius: 5px;
     padding-block: 10px;
     padding-left: 12px;
@@ -62,7 +66,12 @@ body {
 }
 
 .login-form-error-message__icon {
+    display: block;
     margin-right: 10px;
+}
+
+.login-form-error-message__icon_hidden {
+    display: none;
 }
 
 .login-form-error-message__message {
@@ -104,6 +113,10 @@ body {
     width: 400px;
 }
 
+.input-field_error {
+    border-color: #E86961;
+}
+
 .input-field:focus {
     outline: none;
     background-color: #F7F7F7;
@@ -113,8 +126,12 @@ body {
     border-color: #2E2E2E;
 }
 
-.error-help {
+.error-help_hidden {
     display: none;
+}
+
+.error-help_shown {
+    display: block;
     font-family: "Oxygen", sans-serif;
     font-weight: 400;
     font-size: 12px;

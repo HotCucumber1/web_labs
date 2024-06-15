@@ -28,7 +28,8 @@ function getPostFromDB(mysqli $connect, string $postId): mysqli_result
 }
 
 
-function pushPost(mysqli $connect, array $data): void {
+function pushPost(mysqli $connect, array $data): void
+{
     $sql_query = "INSERT INTO
                     post(
                         title,

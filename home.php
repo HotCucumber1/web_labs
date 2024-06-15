@@ -122,7 +122,6 @@ closeDBConnection($connection);
             </nav>
         </div>
     </div>
-
 </footer>
 </body>
 <script src="./scripts/home_script.js" type="application/javascript"></script>

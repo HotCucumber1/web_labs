@@ -1,7 +1,13 @@
 <?php
 
+function authBySession(?int $userId): bool
+{
+    return !is_null($userId);
+}
+
+
 session_start();
-if (!is_null($_SESSION["user_id"]))
+if (authBySession($_SESSION["user_id"]))
 {
     $userName = $_SESSION["user_name"];
 }
